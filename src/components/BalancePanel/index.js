@@ -7,12 +7,14 @@ import BalancePanelChart from './BalancePanelChart';
 import styles from './styles';
 
 const BalancePanel = () => {
+    const currentBalance = '2.064,35';
+
     return(
         <View style={styles.container}>
-            <BalancePanelLabel />
+            <BalancePanelLabel currentBalance={currentBalance}/>
             <BalancePanelChart />
 
-            <Button title='Add' />
+            {/* <Button title='Add' /> */}
         </View>
     );
 }
