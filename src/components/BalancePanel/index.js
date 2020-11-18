@@ -6,9 +6,8 @@ import BalancePanelChart from './BalancePanelChart';
 
 import styles from './styles';
 
-const BalancePanel = () => {
-    const currentBalance = '2.064,35';
-
+const BalancePanel = ({currentBalance}) => {
+    
     return(
         <View style={styles.container}>
             <BalancePanelLabel currentBalance={currentBalance}/>

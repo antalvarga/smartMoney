@@ -2,7 +2,9 @@ import React from 'react';
 import {View, Text, Picker, Button} from 'react-native';
 //import {Picker} from 'react-native-picker';
 
-import EntryLabel from '../../components/BalanceLabel';
+// Adicionando as Props em Todos os Componentes - 01:57
+// import EntryLabel from '../../components/BalanceLabel';
+import BalanceLabel from '../../components/BalanceLabel';
 import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
 
@@ -12,11 +14,33 @@ import EntrySummaryList from '../../components/EntrySummary/EntrySummaryList';
 
 
 const Report = () => {
+
+    const currentBalance = 2065.35;
+   
+    // Adicionando as Props em Todos os Componentes - 11:22
+    const entries = [
+                        {key: '1', description: 'Padaria Asa Branca', amount: 10}
+                        , {key: '2', description: 'SumerMercado CrisTal', amount: 190}
+                        , {key: '3', description: 'Posto Ipiranga', amount: 291.66}
+                        , {key: '4', description: 'Ponto Cristal', amount: 3000.11}
+                    ];
+
+    // Adicionando as Props em Todos os Componentes - 11:22
+    const entriesGrouped = [
+                                {key: '1', description:  'Alimentação', amount: 201}
+                                , {key: '2', description:  'Combustível', amount: 11}
+                                , {key: '3', description:  'Aluguel', amount: 120}
+                                , {key: '4', description:  'Lazer', amount: 250}
+                                , {key: '5', description:  'Outros', amount: 1200}
+                            ];
+
     return(
         <View style={styles.container}>
             <Text>Report</Text>
 
-            <EntryLabel />
+            {/* // Adicionando as Props em Todos os Componentes - 01:57 */}
+            {/* <EntryLabel /> */}
+            <BalanceLabel currentBalance={currentBalance} />
 
             <View>
                 <Picker>
@@ -33,8 +57,8 @@ const Report = () => {
 
             </View>
 
-            <EntrySummary />
-            <EntryList />
+            <EntrySummary entriesGrouped={entriesGrouped}/>
+            <EntryList entries={entries}/>
 
             <View>
                 <Button title='Salvar' />

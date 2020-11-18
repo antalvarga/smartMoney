@@ -5,14 +5,17 @@ import EntryListItem from './EntryListIem';
 
 import styles from './styles';
 
-
-const EntryList = () => {
+// Adicionando as Props em Todos os Componentes - 04:00
+// const EntryList = () => {
+const EntryList = ({entries}) => {
     return(
         <View>
             
             {/* <EntryListItem /> */}
             <Text style={styles.title}>Últimos Lançamentos</Text>
 
+            {/* // Adicionando as Props em Todos os Componentes - 05:32 */}
+            {/*             
             <FlatList
                 data={[
                     {key: 'Padaria Asa Branca: 10'}
@@ -20,7 +23,13 @@ const EntryList = () => {
                     , {key: 'Posto Ipiranga: 190'}
                 ]}
                 renderItem={({item}) => <Text>{item.key}</Text>}
-            />
+            /> */}
+
+            <FlatList
+                data={entries}
+                renderItem={({item}) => <Text style={styles.entry}>{item.description} -> $ {item.amount}</Text>}
+            /> 
+
 
         </View>
     );

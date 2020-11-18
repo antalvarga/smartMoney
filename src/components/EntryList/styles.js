@@ -13,7 +13,9 @@ const styles = StyleSheet.create({
         , marginBottom: 10
         ,
     }
-    ,
+    , entry: {
+        fontSize: 14
+    }
 });
 
 

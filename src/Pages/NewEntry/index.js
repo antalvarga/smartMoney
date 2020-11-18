@@ -6,10 +6,13 @@ import styles from './styles';
 import BalanceLabel from '../../components/BalanceLabel';
 
 const NewEntry = ({navigation}) => {
+    
+    const currentBalance = 2065.35;
+        
     return (
         <View style={styles.container}>
             
-            <BalanceLabel />
+            <BalanceLabel currentBalance={currentBalance}/>
             
             <View>
                 <TextInput style={styles.input} placeholder='1'/>
