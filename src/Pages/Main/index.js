@@ -8,18 +8,39 @@ import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
 
 
+{/* Criando o serviço de inserção de dados - 19:33 */}
+// Criando o formulário de entrada de lançamentos  - 08:01 
+// funçao save transferida para NewEntry
+// import {saveEntry} from '../../services/Entries';
+import NewEntry from '../NewEntry';
+import EntryListItem from '../../components/EntryList/EntryListIem';
+
+
+
 const Main = ({navigation}) => {
-
+    
     const currentBalance = 2064.35;
+    
+    // {/* Criando o serviço de inserção de dados - 19:05 */}
 
-    // Adicionando as Props em Todos os Componentes - 04:00
+    // Criando o formulário de entrada de lançamentos - 08:01 
+    // funçao save transferida para NewEntry
+
+    // const save = () => {
+    //     saveEntry();
+    // }
+
+    //  Adicionando as Props em Todos os Componentes - 04:00 
+    /*
+    // Aula: Editando dados de um lançamento - 01:35 - limpar os entries
+    ***
     const entries = [
                     {key: '1', description: 'Padaria Asa Branca', amount: 10}
                     , {key: '2', description: 'SumerMercado CrisTal', amount: 190}
                     , {key: '3', description: 'Posto Ipiranga', amount: 291.66}
                     , {key: '4', description: 'Ponto Cristal', amount: 3000.11}
                 ];
-    
+    */
     // Adicionando as Props em Todos os Componentes - 08:01
     const entriesGrouped = [
                                 {key: '1', description:  'Alimentação', amount: 201}
@@ -34,12 +55,18 @@ const Main = ({navigation}) => {
             
             <BalancePanel currentBalance={currentBalance} />
             
-            <Button title='Add' onPress={() => navigation.navigate('NewEntry')} />
+            {/* Criando o serviço de inserção de dados - 19:05 */}
+            <Button title='Add' onPress={() => navigation.navigate('NewEntry')} /> 
+            {/* <Button title='Add' onPress={save} /> */}
 
             <EntrySummary entriesGrouped={entriesGrouped} />
 
             {/* // Adicionando as Props em Todos os Componentes - 05:26 */}
-            <EntryList entries={entries} />
+
+            {/* // Aula: Editando dados de um lançamento - 01:35 - limpar os entries */}
+            {/* <EntryList entries={entries} /> */}
+            {/* // Aula: Editando dados de um lançamento - 12:17 - navigation */}
+            <EntryList navigation={navigation} />
             
         </View>
     );
