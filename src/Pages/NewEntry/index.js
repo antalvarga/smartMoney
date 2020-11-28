@@ -32,6 +32,14 @@ const NewEntry = ({navigation}) => {
     // const [amount, setAmount] = useState( entry.amount.toString() );
     const [amount, setAmount] = useState( `${entry.amount}` );
     
+    const isValid = () => {
+
+        if( parseFloat(amount) != 0 ){
+            return true;
+        }
+        return false;
+    }
+
     const onSave = () => {
 
         // Criando o formulário de entrada de lançamentos - 13:41
@@ -83,7 +91,14 @@ const NewEntry = ({navigation}) => {
             </View>
 
             <View>
-                <Button title='Adicionar' onPress={onSave} />
+                {/* <Button title='Adicionar' onPress={onSave} /> */}
+                <Button 
+                    title='Adicionar' 
+                    onPress={() => {
+                        isValid() && onSave()
+                    }} 
+                />
+
                 <Button title='Excluir'onPress={onDelete} />
                 {/* // Aula: Excluindo os lançamentos - 03:25
                 goBack()
