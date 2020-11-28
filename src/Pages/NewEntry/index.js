@@ -10,6 +10,11 @@ import BalanceLabel from '../../components/BalanceLabel';
 // Criando o formulário de entrada de lançamentos  - 08:01 
 import {saveEntry} from '../../services/Entries';
 
+// Aula: Excluindo os lançamentos - 07:36
+import {deleteEntry} from '../../services/Entries';
+
+
+
 const NewEntry = ({navigation}) => {
     
     const currentBalance = 2065.35;
@@ -27,7 +32,7 @@ const NewEntry = ({navigation}) => {
     // const [amount, setAmount] = useState( entry.amount.toString() );
     const [amount, setAmount] = useState( `${entry.amount}` );
     
-    const save = () => {
+    const onSave = () => {
 
         // Criando o formulário de entrada de lançamentos - 13:41
         const data = {
@@ -40,18 +45,19 @@ const NewEntry = ({navigation}) => {
         saveEntry(data, entry);
 
         // Aula: Excluindo os lançamentos - 03:15
-        goBack();
+        onClose();
     }
 
     // Aula: Excluindo os lançamentos - 01:48
-    const remove = () => {
-        
+    const onDelete = () => {
 
-        goBack();
+        deleteEntry(entry);
+
+        onClose();
     }
     
     // Aula: Excluindo os lançamentos - 02:48
-    const goBack = () => {
+    const onClose = () => {
         navigation.goBack();
     }
 
@@ -77,14 +83,14 @@ const NewEntry = ({navigation}) => {
             </View>
 
             <View>
-                <Button title='Adicionar' onPress={save} />
-                <Button title='Excluir'onPress={remove} />
+                <Button title='Adicionar' onPress={onSave} />
+                <Button title='Excluir'onPress={onDelete} />
                 {/* // Aula: Excluindo os lançamentos - 03:25
                 goBack()
                 
             <Button title='Cancelar' onPress={() => navigation.goBack()} />                
             */}
-            <Button title='Cancelar' onPress={goBack} />                
+            <Button title='Cancelar' onPress={onClose} />                
             </View>
         </View>
     );

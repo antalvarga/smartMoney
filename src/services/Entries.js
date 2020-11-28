@@ -85,3 +85,20 @@ export const saveEntry = async (value, entry = {}) => {
 
     return data;
 };
+
+
+// Aula: Editando dados de um lançamento - 
+export const deleteEntry = async entry => {
+    const realm = await getRealm();
+
+    try {
+        realm.write(() => {
+            //realm.deleteall(entry);
+            realm.delete(entry);
+        })
+    } catch (error) {
+        console.error('deleteEntry :: error on delete ' + JSON.stringify( entry ));
+        Alert.alert('Erro ao excluir');
+        
+    }
+}
