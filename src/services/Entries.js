@@ -2,6 +2,10 @@
 import {Alert} from 'react-native';
 import {getRealm} from './Realm';
 
+// Aula: Editando dados de um lançamento - 19:59
+//import {getUUID} from '../services/UUID';
+import getUUID from '../services/UUID';
+
 
 // Aula: Listando todos os lançamentos - 07:15
 export const getEntries = async () => {
@@ -20,11 +24,15 @@ export const getEntries = async () => {
 // export const saveEntry = async (value) => {
 export const saveEntry = async (value, entry = {}) => {
 
+    console.log( ' :: saveEntry :: ');
     const realm = await getRealm();
 
     let data = {};
 
-
+    console.log( 'vai chamar getUUID ');
+    const teste = getUUID();
+    console.log( `ChamOU getUUID :: teste -> ${teste}` );
+           
     // Criando o formulário de entrada de lançamentos - 11:23
     // Aula: Editando dados de um lançamento - 11:02 - Nào usar a linha abaixo
     // const {amount} = value;
@@ -44,9 +52,13 @@ export const saveEntry = async (value, entry = {}) => {
                 , isInit: false
             };
             */
+
+
+            
            data = {
             // Se o value.id for nulo pego o entry.id ...   
-            id: value.id || entry.id || 'ABC'
+            // Aula: Editando dados de um lançamento - 20:22 - getUUID
+            id: value.id || entry.id || teste
             // Aula: Editando dados de um lançamento - 11:08
             // , amount: amount
             , amount: value.amount || entry.amount
@@ -54,6 +66,7 @@ export const saveEntry = async (value, entry = {}) => {
             , isInit: false
         };
        
+            console.log( ' saveEntry :: ', teste );
             
             realm.create('Entry', data, true);
         });
