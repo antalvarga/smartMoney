@@ -1,6 +1,10 @@
 
 import {StyleSheet} from 'react-native';
 
+// Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 10:54
+import Colors from '../../../styles/Colors';
+
+
 const styles = StyleSheet.create({
     container : {
         // flex: 1
@@ -9,11 +13,13 @@ const styles = StyleSheet.create({
         // , justifyContent: 'center'
     }
     , label: {
-        fontSize: 18
+        fontSize: 14
+        , color: Colors.white
         ,
     }
     , value: {
-        fontSize: 22
+        fontSize: 36
+        , color: Colors.white
         ,
     }
 });

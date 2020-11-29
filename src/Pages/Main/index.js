@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button } from 'react-native';
+import {View, Button, Text } from 'react-native';
 
 import styles from './styles';
 
@@ -19,7 +19,8 @@ import EntryListItem from '../../components/EntryList/EntryListIem';
 
 const Main = ({navigation}) => {
     
-    const currentBalance = 2064.35;
+    // const currentBalance = 2064.35;
+    const currentBalance = 9999.99;
     
     // {/* Criando o serviço de inserção de dados - 19:05 */}
 
@@ -53,10 +54,14 @@ const Main = ({navigation}) => {
     return (
         <View style={styles.container}>
             
+            
             <BalancePanel currentBalance={currentBalance} />
             
             {/* Criando o serviço de inserção de dados - 19:05 */}
-            <Button title='Add' onPress={() => navigation.navigate('NewEntry')} /> 
+            {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 13:49 
+                *** Retirar o botão ***
+            */}
+            {/* <Button title='Add' onPress={() => navigation.navigate('NewEntry')} />  */}
             {/* <Button title='Add' onPress={save} /> */}
 
             <EntrySummary entriesGrouped={entriesGrouped} />
