@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
     }
     , panel: {
         paddingVertical: 10
+        , alignItems: 'center'
+        , justifyContent: 'center'
         ,
     }
     , button: {
@@ -25,7 +27,8 @@ const styles = StyleSheet.create({
         , borderRadius: 30
         , marginTop: -25
         , marginRight: 10
-        , 
+        , shadowColor: Colors.black
+        ,
     }
 });
 

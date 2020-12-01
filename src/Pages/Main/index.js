@@ -19,8 +19,9 @@ import EntryListItem from '../../components/EntryList/EntryListIem';
 
 const Main = ({navigation}) => {
     
+    // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:05 - 
     // const currentBalance = 2064.35;
-    const currentBalance = 9999.99;
+    
     
     // {/* Criando o serviço de inserção de dados - 19:05 */}
 
@@ -54,8 +55,12 @@ const Main = ({navigation}) => {
     return (
         <View style={styles.container}>
             
-            
-            <BalancePanel currentBalance={currentBalance} />
+            {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 28:38 - passando funcao como propriedade */}
+            {/* <BalancePanel currentBalance={currentBalance} /> */}
+            {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:19 */}
+            <BalancePanel                 
+                onNewEntryPress={() => {navigation.navigate('NewEntry')}}
+            />
             
             {/* Criando o serviço de inserção de dados - 19:05 */}
             {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 13:49 

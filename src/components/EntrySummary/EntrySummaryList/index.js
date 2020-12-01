@@ -7,7 +7,8 @@ import styles from './styles';
 const EntrySummaryList = ({entriesGrouped}) => {
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Categorias</Text>
+            {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 08:22 */}
+            {/* <Text style={styles.title}>Categorias</Text> */}
 
             {/* Adicionando as Props em Todos os Componentes - 09:49 */}
             {/* 

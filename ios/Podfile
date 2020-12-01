@@ -12,6 +12,8 @@ target 'smartmoney' do
 
   pod 'react-native-create-guid', :path => '../node_modules/react-native-create-guid'
 
+
+
   target 'smartmoneyTests' do
     inherit! :complete
     # Pods for testing
