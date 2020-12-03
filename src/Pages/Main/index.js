@@ -44,6 +44,10 @@ const Main = ({navigation}) => {
                 ];
     */
     // Adicionando as Props em Todos os Componentes - 08:01
+
+    // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31
+    // transferir essa constante para a EntrySumary
+    /*
     const entriesGrouped = [
                                 {key: '1', description:  'Alimentação', amount: 201}
                                 , {key: '2', description:  'Combustível', amount: 11}
@@ -51,7 +55,7 @@ const Main = ({navigation}) => {
                                 , {key: '4', description:  'Lazer', amount: 250}
                                 , {key: '5', description:  'Outros', amount: 1200}
                             ];
-                
+    */            
     return (
         <View style={styles.container}>
             
@@ -69,14 +73,27 @@ const Main = ({navigation}) => {
             {/* <Button title='Add' onPress={() => navigation.navigate('NewEntry')} />  */}
             {/* <Button title='Add' onPress={save} /> */}
 
-            <EntrySummary entriesGrouped={entriesGrouped} />
+            {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31 */}
+            {/* <EntrySummary entriesGrouped={entriesGrouped} /> */}
+            {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 30:14 - onPressActionButton */}
+            <EntrySummary 
+                onPressActionButton={() => navigation.navigate( 'Report' )}
+            />
 
             {/* // Adicionando as Props em Todos os Componentes - 05:26 */}
 
             {/* // Aula: Editando dados de um lançamento - 01:35 - limpar os entries */}
             {/* <EntryList entries={entries} /> */}
             {/* // Aula: Editando dados de um lançamento - 12:17 - navigation */}
-            <EntryList navigation={navigation} />
+            {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 02:24 - retirar o navigation */}
+            {/* <EntryList navigation={navigation} /> */}
+            {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 27:40 - onEntryPress */}
+            {/* quem está esperando o parametro entry é a pag NewEntry */}
+            {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 29:34 - onPressActionButton */}
+            <EntryList 
+                onEntryPress={(entry) => navigation.navigate('NewEntry', {entry: entry})  }
+                onPressActionButton={() => navigation.navigate( 'Report' )}
+            />
             
         </View>
     );

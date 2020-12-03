@@ -6,13 +6,15 @@ const styles = StyleSheet.create({
         //flex: 1
         
     }
-    , title: {
-        fontSize: 22
-        , fontWeight: 'bold'
-        , marginTop: 10
-        , marginBottom: 10
-        ,
-    }
+
+    // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 04:27
+    // , title: {
+    //     fontSize: 22
+    //     , fontWeight: 'bold'
+    //     , marginTop: 10
+    //     , marginBottom: 10
+    //     ,
+    // }
     , entry: {
         fontSize: 14
     }

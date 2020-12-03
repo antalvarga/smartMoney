@@ -1,16 +1,12 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
+import Colors from '../../../styles/Colors';
 
-// Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 02:15
-import Colors from '../../styles/Colors';
-
-
-// Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 04:30 - transferido para 
-// components> core> Container
 const styles = StyleSheet.create({
 
-/*
+    // // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 04:37
+    // Estilos copiado de EntrySummary> styles.js
     container: {
         // flex: 1
         // ,
@@ -18,6 +14,7 @@ const styles = StyleSheet.create({
         , margin: 5
         , padding: 10
         , marginTop: -18
+        , marginBottom: 25
         , borderRadius: 5
         , borderStyle: 'solid'
         , borderWidth: 1
@@ -74,9 +71,7 @@ const styles = StyleSheet.create({
         , color: Colors.white
 
     }
-*/
 
 });
-
 
 export default styles;

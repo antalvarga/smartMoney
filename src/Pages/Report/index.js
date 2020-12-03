@@ -1,6 +1,10 @@
 import React from 'react';
+
+// EM 20201203 - Ocorreu um warning sobre o picker sugerindo que fosse utilizado
+// o @react-native-community/picker
+// import {View, Text, Button} from 'react-native';
+// import {Picker} from '@react-native-community/picker';
 import {View, Text, Picker, Button} from 'react-native';
-//import {Picker} from 'react-native-picker';
 
 // Adicionando as Props em Todos os Componentes - 01:57
 // import EntryLabel from '../../components/BalanceLabel';
@@ -44,10 +48,12 @@ const Report = () => {
 
             <View>
                 <Picker>
+{/* 
                     <Picker.Item label='Categoria 1' />
                     <Picker.Item label='Categoria 2' />
                     <Picker.Item label='Categoria 3' />
                     <Picker.Item label='Categoria 4' />
+                     */}
                     <Picker.Item label='Todas as categorias' />
                 </Picker>
 
