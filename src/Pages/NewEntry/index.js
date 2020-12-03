@@ -3,7 +3,6 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 
-import styles from './styles';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
@@ -14,10 +13,12 @@ import {saveEntry} from '../../services/Entries';
 import {deleteEntry} from '../../services/Entries';
 
 
+import styles from './styles';
+
 
 const NewEntry = ({navigation}) => {
-    
-    const currentBalance = 2065.35;
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 00:41
+    // const currentBalance = 2065.35;
     
     // Aula: Editando dados de um lançamento - 05:58
     const entry = navigation.getParam('entry', {
@@ -72,9 +73,11 @@ const NewEntry = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+            {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 00:41 */}
+            {/* <BalanceLabel currentBalance={currentBalance}/> */}
+            <BalanceLabel />
             
-            <BalanceLabel currentBalance={currentBalance}/>
-            
+
             <View>
                 <TextInput 
                     style={styles.input} placeholder='1'
