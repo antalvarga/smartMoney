@@ -6,6 +6,9 @@ import {View, Text, TextInput, Button} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 06:46
+import NewEntryInput from './NewEntryInput';
+
 // Criando o formulário de entrada de lançamentos  - 08:01 
 import {saveEntry} from '../../services/Entries';
 
@@ -79,10 +82,19 @@ const NewEntry = ({navigation}) => {
             
 
             <View>
+
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 07:03 - Substituir o TextInput por NewEntruInput*/}
+                {/* 
                 <TextInput 
                     style={styles.input} placeholder='1'
                     onChangeText={(text) => setAmount(text)}
                     value={amount}
+                />
+                */}
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 15:04 */}
+                <NewEntryInput 
+                    value={amount}
+                    onChangeValue={setAmount}
                 />
 
                 <TextInput style={styles.input} placeholder='2'/>
