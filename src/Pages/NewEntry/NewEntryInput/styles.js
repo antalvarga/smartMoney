@@ -44,8 +44,11 @@ const styles = StyleSheet.create({
     }
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 2 - 06:02
     , debitButtonPrefix: {
-        fontSize: 28
+        fontSize: 18
         , color: Colors.white
+        , minWidth: 12
+        , marginTop: 5   // usei por minha conta
+        ,
         
     }
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 2 - 06:10

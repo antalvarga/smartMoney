@@ -146,9 +146,8 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
 
             {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 05:49 */}
             <View style={styles.amount}>
-
-                <Text style={styles.amountText}>$ 10,00</Text>
-
+            {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 10:06 - {entry.amount} */}
+                <Text style={styles.amountText}>{entry.amount}</Text>
             </View>
 
 

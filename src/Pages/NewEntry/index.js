@@ -34,7 +34,9 @@ const NewEntry = ({navigation}) => {
     // Aula: Editando dados de um lançamento - 07:57
     // const [amount, setAmount] = useState( '0.00' );
     // const [amount, setAmount] = useState( entry.amount.toString() );
-    const [amount, setAmount] = useState( `${entry.amount}` );
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 15:07
+    // const [amount, setAmount] = useState( `${entry.amount}` );
+    const [amount, setAmount] = useState( entry.amount);
     
     const isValid = () => {
 
