@@ -1,7 +1,9 @@
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 03:51
 import React from 'react';
-import {View, Text} from 'react-native';
+
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 2 - 00:31 - TouchableOpacity
+import {View, TouchableOpacity , Text} from 'react-native';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 04:15
 import {TextInputMask} from 'react-native-masked-text';
@@ -13,7 +15,14 @@ import styles from './styles';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 09:26
 const NewEntryInput = ({value, onChangeValue}) => {
     return(
-        <View>
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 2 - 02:00 - Estilizando a view
+        <View style={styles.container}>
+            {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 2 - 00:41 - TouchableOpacity*/}
+            <TouchableOpacity style={styles.debitButton}>
+                <Text style={styles.debitButtonPrefix}>-</Text>
+                <Text style={styles.debitButtonText}>R$</Text>
+            </TouchableOpacity>
+
             {/* <Text>NewEntryInput</Text> */}
             <TextInputMask 
                 style={styles.input}
