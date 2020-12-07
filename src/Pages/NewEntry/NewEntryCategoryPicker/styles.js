@@ -6,9 +6,13 @@ import Colors from '../../../styles/Colors';
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: Colors.background
+        ,
+
+    }
+    , modal: {
         flex: 1
-        , alignContent: 'center'
-        , justifyContent: 'center'
+        , backgroundColor: Colors.background
         ,
     }
     , pickerButton: {
@@ -25,14 +29,39 @@ const styles = StyleSheet.create({
         , textAlign: 'center'
         , 
     }
-    , pickerButtonText2: {
-        fontSize: 28
+    , modalItem: {
+        backgroundColor: Colors.asphalt
+        , borderRadius: 15
+        , marginVertical: 10
+        , marginHorizontal: 20
+        , padding: 20
+        , 
+    }
+    , modalItemText: {
+        fontSize: 20
         , color: Colors.white
         , textAlign: 'center'
-        , justifyContent: 'center'
+        , 
+    }
+    , closeButton: {
+        backgroundColor: Colors.background
+        , borderColor: Colors.green
+        , borderWidth: 2
+        , borderRadius: 15
+        , marginVertical: 10
+        , marginHorizontal: 20
+        , padding: 10
         , alignSelf: 'center'
-        , marginTop: 100
+        , paddingVertical: 8
+        , paddingHorizontal: 160
         ,
+    }
+    , closeButtonText: {
+        color: Colors.green
+        , textAlign: 'center'
+        , fontSize: 14
+        ,
+
     }
 
 

@@ -39,14 +39,24 @@ export const getRealm = async () => {
 //  popular as categorias
 export const initDb = (realm) => {
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 09:40
-    const categoriesLenght = realm.objects('Category').lenght;
-
+    // Estava dando erro pq eu passei .lenght como propriedade
+    // repare que o correto é .length
+    const categoriesLenght = realm.objects('Category').length;
+    
+    // TODO - 
     // não funfou - categoriesLenght is undefined
     //alert(`initDb :: ${categoriesLenght} :: categorires lenght `);
-
+    
     //console.log( `initDb :: categorires lenght :: Quantidade de categorias no bd: ${categoriesLenght}`);
+    console.log( `initDb :: categorires lenght :: ${categoriesLenght}`);
+    
+    const cont = realm.objects('Category').count;
+    console.log( `initDb :: categorires count :: ${cont}`);
 
-    if( categoriesLenght == 0 || null == categoriesLenght) {
+
+
+    // if( categoriesLenght == 0 || null == categoriesLenght) {
+    if( categoriesLenght == 0 ) {
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 13:58
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 00:53 
         // const categories = getAllCategories();
@@ -65,7 +75,8 @@ export const initDb = (realm) => {
             });
             
         } catch (error) {
-            
+            console.error( error );
+
         }
     } else {
         console.log( 'initDb :: categories already existing... ');
