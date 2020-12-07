@@ -4,7 +4,9 @@ import CategorySchema from '../schemas/CategorySchema';
 import EntrySchema from '../schemas/EntrySchema';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 13:17
-import {getAllCategories} from './Categories';
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 00:53 
+//import {getAllCategories} from './Categories';
+import {getDefaultCategories} from './Categories';
 
 
  
@@ -18,6 +20,12 @@ export const getRealm = async () => {
         ,
     });
 
+
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 01:26 - como apagar todo o Bd
+    //dropDb(realm);
+
+
+
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 22:37
     initDb(realm);
 
@@ -30,13 +38,19 @@ export const getRealm = async () => {
 // se = 0 
 //  popular as categorias
 export const initDb = (realm) => {
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 09:40
     const categoriesLenght = realm.objects('Category').lenght;
 
-    console.log( `initDb :: categorires lenght :: Quantidade de categorias no bd: ${categoriesLenght}`);
+    // não funfou - categoriesLenght is undefined
+    //alert(`initDb :: ${categoriesLenght} :: categorires lenght `);
 
-    if( categoriesLenght === 0 ) {
+    //console.log( `initDb :: categorires lenght :: Quantidade de categorias no bd: ${categoriesLenght}`);
+
+    if( categoriesLenght == 0 || null == categoriesLenght) {
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 13:58
-        const categories = getAllCategories();
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 00:53 
+        // const categories = getAllCategories();
+        const categories = getDefaultCategories();
 
         console.log( `initDb :: initing Db...` ); 
 
@@ -56,5 +70,13 @@ export const initDb = (realm) => {
     } else {
         console.log( 'initDb :: categories already existing... ');
     };
+};
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 01:08
+export const dropDb = realm => {
+    console.log( 'dropDb :: droping db...');
+
+    realm.write( () => {
+        realm.deleteAll();
+    })
 }

@@ -15,8 +15,13 @@ import {saveEntry} from '../../services/Entries';
 // Aula: Excluindo os lançamentos - 07:36
 import {deleteEntry} from '../../services/Entries';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 08:18 - importar NewEntryCategoryPicker
+import NewEntryCategoryPicker from './NewEntryCategoryPicker';
+
 
 import styles from './styles';
+
+
 
 
 const NewEntry = ({navigation}) => {
@@ -99,8 +104,9 @@ const NewEntry = ({navigation}) => {
                     onChangeValue={setAmount}
                 />
 
-                <TextInput style={styles.input} placeholder='2'/>
-
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 08:18 - importar NewEntryCategoryPicker */}
+                {/* <TextInput style={styles.input} placeholder='2'/> */}
+                <NewEntryCategoryPicker /> 
 
                 <Button title='GPS' />
 

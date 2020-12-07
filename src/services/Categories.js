@@ -1,6 +1,8 @@
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 04:18
-import {getUUID} from './UUID';
+// import {getUUID} from './UUID';
+import getUUID from './UUID';
+
 import {getRealm} from './Realm';
 
 

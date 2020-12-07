@@ -120,7 +120,8 @@ export default getUUID;
 import uuid from 'react-native-uuid';
 
 const getUUID = () => {
-    return uuid.v4();
+    //return uuid.v4();
+    return uuid.v1();
 }
 
 export default getUUID;
