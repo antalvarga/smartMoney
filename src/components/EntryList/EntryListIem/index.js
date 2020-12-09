@@ -43,7 +43,12 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
     // const bulletColor = entry.category.color || Colors.white
     // TODO: A propriedade color para category não existe no modelo
     //const bulletColor = entry.category || Colors.white
-    const bulletColor = Colors.blue;
+    
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 15:40
+    // const bulletColor = Colors.blue;
+    const bulletColor = entry.category.color || Colors.white;
+
+
 
     return (
 
@@ -127,7 +132,7 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
                     <Icon style={styles.entryAtIcon} name='access-time' size={20} />
                     <Text style={styles.entryAtText}>{entry.entryAt.toString()}</Text>
 
-                    
+                    {/* Condição ternária */}
                     { entry.entryAt && (
                         <>                            
                             <Text style={styles.addressText} >{entry.address}</Text>

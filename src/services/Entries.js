@@ -64,6 +64,9 @@ export const saveEntry = async (value, entry = {}) => {
             , amount: value.amount || entry.amount
             , entryAt: value.entryAt || entry.entryAt
             , isInit: false
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:36
+            , category: value.category || entry.category
+            ,
         };
        
             console.log( ' saveEntry :: ', teste );

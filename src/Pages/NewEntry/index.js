@@ -31,11 +31,16 @@ const NewEntry = ({navigation}) => {
     // Aula: Editando dados de um lançamento - 05:58
     const entry = navigation.getParam('entry', {
         id: null
-        , amount: '0.00'
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 17:31    
+        // , amount: '0.00'
+        , amount: 0
         , entryAt: new Date()
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 09:11 - category
+        , category: {id: null, name: 'Selecione'}
         , 
     });
     
+
     // Aula: Editando dados de um lançamento - 07:57
     // const [amount, setAmount] = useState( '0.00' );
     // const [amount, setAmount] = useState( entry.amount.toString() );
@@ -43,6 +48,15 @@ const NewEntry = ({navigation}) => {
     // const [amount, setAmount] = useState( `${entry.amount}` );
     const [amount, setAmount] = useState( entry.amount);
     
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 04:16 - debit
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 17:57 
+    // const [debit, setDebit] = useState( entry.amount <= 0 ? -1 : 1);
+    const [debit, setDebit] = useState( entry.amount <= 0 );
+    
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 05:36 - debit
+    const [category, setCategory] = useState(entry.category);
+
+
     const isValid = () => {
 
         if( parseFloat(amount) != 0 ){
@@ -56,6 +70,8 @@ const NewEntry = ({navigation}) => {
         // Criando o formulário de entrada de lançamentos - 13:41
         const data = {
             amount: parseFloat(amount)
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:10
+            , category: category
             ,
         }
 
@@ -101,12 +117,18 @@ const NewEntry = ({navigation}) => {
                 {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 15:04 */}
                 <NewEntryInput 
                     value={amount}
+                    onChangeDebit={setDebit}
                     onChangeValue={setAmount}
                 />
 
                 {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 08:18 - importar NewEntryCategoryPicker */}
                 {/* <TextInput style={styles.input} placeholder='2'/> */}
-                <NewEntryCategoryPicker /> 
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 05:16 -  */}
+                <NewEntryCategoryPicker 
+                    debit={debit} 
+                    category={category} 
+                    onChangeCategory={setCategory}
+                /> 
 
                 <Button title='GPS' />
 

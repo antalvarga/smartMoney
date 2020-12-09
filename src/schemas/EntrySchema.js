@@ -11,6 +11,8 @@ const EntrySchema = {
         , address: 'string?'
         , photo: 'string?'
         , isInit: 'bool'
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 16:08
+        // , category: 'Category?'
         , category: 'Category'
     }
     ,

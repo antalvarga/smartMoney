@@ -16,7 +16,9 @@ export const getRealm = async () => {
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 1 - 24:33
         // Todas as vezes que houver alteração no schema é necessário alterar a versão
         // , schemaVersion: 1
-        , schemaVersion: 2
+        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 16:10
+        // , schemaVersion: 2
+        , schemaVersion: 3
         ,
     });
 

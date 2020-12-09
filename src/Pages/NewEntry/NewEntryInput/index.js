@@ -12,16 +12,19 @@ import styles from './styles';
 
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 09:26
-const NewEntryInput = ({value, onChangeValue}) => {
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 04:02  onChangeDebit
+const NewEntryInput = ({value, onChangeDebit, onChangeValue}) => {
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 02:25
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 12:10
     // const [ debit, setDebit] = useState(-1); condicao ternaria
-    const [ debit, setDebit] = useState( (value < 0) ? -1: 1 );
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 18:15 - value <= 0
+    const [ debit, setDebit] = useState( (value <= 0) ? -1: 1 );
     
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 02:25
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 12:10
-    const [ debitPrefix, setDebitPrefix] = useState( (value < 0) ? '-' : '+');
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 18:15 - value <= 0
+    const [ debitPrefix, setDebitPrefix] = useState( (value <= 0) ? '-' : '+');
     
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 02:25
     const onChangeDebitCredit = () => {
@@ -30,9 +33,15 @@ const NewEntryInput = ({value, onChangeValue}) => {
         if(debit < 0) {
             setDebit(1);
             setDebitPrefix('+');
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 18:34 - substituir 1 por false
+            // onChangeDebit(1);
+            onChangeDebit(false);
         } else {
             setDebit(-1);
             setDebitPrefix('-');
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 18:34 - substituir -1 por true
+            // onChangeDebit(-1);
+            onChangeDebit(true);
         }    
 
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 13:36
