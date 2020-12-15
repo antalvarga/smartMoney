@@ -3,17 +3,23 @@ import {StyleSheet} from 'react-native';
 
 import Colors from '../../../styles/Colors';
 
+
 const styles = StyleSheet.create({
-    button:{
-        backgroundColor: Colors.asphalt
-        , height: 59
+    container: {
+
+    }
+    , button: {
+        backgroundColor: Colors.red
         , width: 59
+        , height: 59
         , borderRadius: 30
         , alignItems: 'center'
         , justifyContent: 'center'
         , margin: 5
         ,
     }
+    , 
+
 });
 
 

@@ -21,6 +21,9 @@ import NewEntryCategoryPicker from './NewEntryCategoryPicker';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Data -07:10
 import NewEntryDatePicker from './NewEntryDatePicker';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:06
+import NewEntryDeleteAction from './NewEntryDeleteAction';
+
 
 import styles from './styles';
 
@@ -148,6 +151,9 @@ const NewEntry = ({navigation}) => {
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 18:50 - onChange */}
                     <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
 
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:29 */}
+                    <NewEntryDeleteAction entry={entry} onOkPress={onDelete}/>
+
                 </View>
 
  
@@ -169,13 +175,14 @@ const NewEntry = ({navigation}) => {
                     }} 
                 />
 
-                <Button title='Excluir'onPress={onDelete} />
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 00:27     */}
+                {/* <Button title='Excluir'onPress={onDelete} /> */}
                 {/* // Aula: Excluindo os lançamentos - 03:25
                 goBack()
                 
-            <Button title='Cancelar' onPress={() => navigation.goBack()} />                
-            */}
-            <Button title='Cancelar' onPress={onClose} />                
+                <Button title='Cancelar' onPress={() => navigation.goBack()} />                
+                */}
+                <Button title='Cancelar' onPress={onClose} />                
             </View>
         </View>
     );
