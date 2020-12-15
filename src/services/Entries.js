@@ -11,7 +11,8 @@ import getUUID from '../services/UUID';
 export const getEntries = async () => {
     const realm = await getRealm();
 
-    const entries = realm.objects('Entry');
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 25:50 - sorted sendo true = desc
+    const entries = realm.objects('Entry').sorted('entryAt', true);
 
     // Aula: Listando todos os lançamentos - 18:38
     // console.log( 'getEntries :: entries',  entries );
@@ -52,8 +53,6 @@ export const saveEntry = async (value, entry = {}) => {
                 , isInit: false
             };
             */
-
-
             
            data = {
             // Se o value.id for nulo pego o entry.id ...   
@@ -63,6 +62,8 @@ export const saveEntry = async (value, entry = {}) => {
             // , amount: amount
             , amount: value.amount || entry.amount
             , entryAt: value.entryAt || entry.entryAt
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 24:49
+            , description: value.category.name 
             , isInit: false
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:36
             , category: value.category || entry.category

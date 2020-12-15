@@ -18,6 +18,9 @@ import {deleteEntry} from '../../services/Entries';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 08:18 - importar NewEntryCategoryPicker
 import NewEntryCategoryPicker from './NewEntryCategoryPicker';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Data -07:10
+import NewEntryDatePicker from './NewEntryDatePicker';
+
 
 import styles from './styles';
 
@@ -56,6 +59,11 @@ const NewEntry = ({navigation}) => {
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 05:36 - debit
     const [category, setCategory] = useState(entry.category);
 
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 15:26 - 
+    const [entryAt, setEntryAt] = useState(entry.entryAt);
+
+
+
 
     const isValid = () => {
 
@@ -72,6 +80,8 @@ const NewEntry = ({navigation}) => {
             amount: parseFloat(amount)
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:10
             , category: category
+            // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 20:09 - entryAt
+            , entryAt: entryAt
             ,
         }
 
@@ -103,8 +113,8 @@ const NewEntry = ({navigation}) => {
             {/* <BalanceLabel currentBalance={currentBalance}/> */}
             <BalanceLabel />
             
-
-            <View>
+            {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 23:09 - formContainer */}
+            <View style={styles.formContainer}>
 
                 {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 07:03 - Substituir o TextInput por NewEntruInput*/}
                 {/* 
@@ -130,9 +140,24 @@ const NewEntry = ({navigation}) => {
                     onChangeCategory={setCategory}
                 /> 
 
-                <Button title='GPS' />
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 21:36 - View */}
+                <View style={styles.formActionContainer}>
 
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 07:10 */}
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 16:06 - value */}
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 18:50 - onChange */}
+                    <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
+
+                </View>
+
+ 
+                {/*                     
+                // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 07:56 -retirar momentaneamente os botoes abaixo
+                <Button title='GPS' />
                 <Button title='Câmera' />
+                */}
+
+
             </View>
 
             <View>

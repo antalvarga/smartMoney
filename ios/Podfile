@@ -12,7 +12,6 @@ target 'smartmoney' do
 
 
 
-  pod 'RealmJS', :path => '../node_modules/realm'
 
   target 'smartmoneyTests' do
     inherit! :complete

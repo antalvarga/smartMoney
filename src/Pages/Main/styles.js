@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
         flex: 1
         , marginTop: 50
         , padding: 1
-        //, alignItems: "center"
-        //, justifyContent: 'center'
+        // , alignItems: "center"
+        // , justifyContent: 'center'
 
 
         // Aula: Criando a base de estilo - 05:19
