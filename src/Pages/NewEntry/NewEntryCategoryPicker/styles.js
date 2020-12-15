@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
         , textAlign: 'center'
         , 
     }
+    // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:43 - pode apagar
+    /*
     , closeButton: {
         backgroundColor: Colors.background
         , borderColor: Colors.green
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
         , paddingHorizontal: 160
         ,
     }
+    */
     , closeButtonText: {
         color: Colors.green
         , textAlign: 'center'

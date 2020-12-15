@@ -8,9 +8,10 @@ import Colors from '../../styles/Colors';
 styles = StyleSheet.create({
     container: {
         flex: 1
-        ,marginVertical: 0
+        , marginTop: 40
+        , marginVertical: 0
         , backgroundColor: Colors.background
-        , padding: 80
+        , padding: 5
         // , alignItems: 'center'
         , justifyContent: 'center'
         , 

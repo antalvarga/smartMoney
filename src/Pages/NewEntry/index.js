@@ -3,6 +3,10 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 04:17 - import 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 08:01 - import 
+import ActionFooter, {ActionPrimaryButton, ActionSecondaryButton} from '../../components/Core/ActionFooter';
+
 
 import BalanceLabel from '../../components/BalanceLabel';
 
@@ -166,14 +170,18 @@ const NewEntry = ({navigation}) => {
 
             </View>
 
+           
             <View>
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 04:35 - substituir pelo component ActionFooter     */}
                 {/* <Button title='Adicionar' onPress={onSave} /> */}
+                {/*                  
                 <Button 
                     title='Adicionar' 
                     onPress={() => {
                         isValid() && onSave()
                     }} 
-                />
+                /> 
+                */}
 
                 {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 00:27     */}
                 {/* <Button title='Excluir'onPress={onDelete} /> */}
@@ -182,8 +190,30 @@ const NewEntry = ({navigation}) => {
                 
                 <Button title='Cancelar' onPress={() => navigation.goBack()} />                
                 */}
-                <Button title='Cancelar' onPress={onClose} />                
-            </View>
+                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 04:35 - substituir pelo component ActionFooter     */}
+                {/* <Button title='Cancelar' onPress={onClose} />                 */}
+
+
+                <ActionFooter>
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 08:08 */}
+                    {/* <Text>teste</Text> */}
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 12:31 - condicao ternaria no title */}
+                    <ActionPrimaryButton                         
+                        // title='Salvar' 
+                        title={entry.id ? 'Salvar' : 'Adicionar'}
+                        onPress={() => {
+                            isValid() && onSave();
+                        }}
+                    />
+
+                    <ActionSecondaryButton 
+                        title='Cancelar' 
+                        onPress={onClose}                    
+                    />
+
+                </ActionFooter>
+            </View> 
+            
         </View>
     );
 };

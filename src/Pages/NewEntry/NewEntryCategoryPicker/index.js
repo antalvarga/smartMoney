@@ -8,6 +8,9 @@ import React, { useEffect, useState } from 'react';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 07:39 - FlatList
 import {View, TouchableOpacity, Modal, FlatList, Text} from 'react-native';
 
+// Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 14:17 
+import ActionFooter, {ActionPrimaryButton, ActionSecondaryButton} from '../../../components/Core/ActionFooter'
+
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 01:31
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 07:47 - separar as categorias deb / cred
 // import {getAllCategories} from '../../../services/Categories/';
@@ -133,13 +136,21 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
 
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 -  16:09*/}
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 12:24 - onClosePress                             */}
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:36 */}
+                    {/*                     
                     <TouchableOpacity 
                         style={styles.closeButton}
                         // onPress={() => {setModalVisible(false); }}
                         onPress={onClosePress}
                     >
                         <Text style={styles.closeButtonText}>Fechar</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> 
+                    */}
+
+                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:06 */}
+                    <ActionFooter>
+                        <ActionPrimaryButton title='Fechar' onPress={onClosePress} />
+                    </ActionFooter>
 
                 </View>
 
