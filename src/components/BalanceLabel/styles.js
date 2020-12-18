@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center'
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 13:30
-        , padding: 20
+        , padding: 15
         , 
 
     }
