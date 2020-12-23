@@ -7,12 +7,43 @@ import {getRealm} from './Realm';
 import getUUID from '../services/UUID';
 
 
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 11:06 - inclusao das linhas abaixo
+// import moment from 'moment';
+// import 'moment/locale/pt-br';
+// moment.locale('pt-br');
+// transferido para a pasta vendors/moment.js
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 15:10 - moment
+import moment from '../vendors/moment';
+
+
+
+
 // Aula: Listando todos os lançamentos - 07:15
-export const getEntries = async () => {
-    const realm = await getRealm();
+export const getEntries = async (days) => {
+    
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 20:36 - let
+    // será necessario pq iremos alterando os parâmetros
+    // const realm = await getRealm();
+    let realm = await getRealm();
+    
+    realm = realm.objects('Entry');
+    
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 17:30 - if
+    if( days > 0) {
+        // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 11:06 - days
+        // days  = data relativa ao now
+        // Exemplo = agora - 7 dias
+        // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 21:35 - transfere para dentro do if
+        const date = moment().subtract(days, 'days').toDate();
+        
+        realm = realm.filtered('entryAt >= $0', date);
+
+    }
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 25:50 - sorted sendo true = desc
-    const entries = realm.objects('Entry').sorted('entryAt', true);
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 22:22 - retirar realm.objects
+    // const entries = realm.objects('Entry').sorted('entryAt', true);
+    const entries = realm.sorted('entryAt', true);
 
     // Aula: Listando todos os lançamentos - 18:38
     // console.log( 'getEntries :: entries',  entries );

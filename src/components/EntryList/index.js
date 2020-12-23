@@ -28,7 +28,8 @@ import styles from './styles';
 // const EntryList = ({navigation}) => {
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 26:40 - onEntryPress    
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 29:23 - onPressActionButton    
-const EntryList = ({onEntryPress, onPressActionButton}) => {
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 06:52 - days
+const EntryList = ({days = 7, onEntryPress, onPressActionButton}) => {
 
     // Aula: Listando todos os lançamentos - 15:14 - useState
     [entries, setEntries] = useState([]);
@@ -43,7 +44,8 @@ const EntryList = ({onEntryPress, onPressActionButton}) => {
         // };
         // 17:52
         async function loadEntries() {
-            const data = await getEntries();
+            // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 22:51 - days
+            const data = await getEntries( days );
             setEntries(data);
         }
 
@@ -58,7 +60,8 @@ const EntryList = ({onEntryPress, onPressActionButton}) => {
         // <View>
         <Container
             title= 'Últimos lançamentos'
-            actionLabelText='7 dias'
+            // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 08:30 - days
+            actionLabelText= {`Últimos ${days} dias`}
             actionButtonText='Ver mais'
             onPressActionButton={onPressActionButton}
         >
