@@ -1,11 +1,19 @@
-import React from 'react';
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 09:00 - useState
+import React, {useState} from 'react';
 
 // EM 20201203 - Ocorreu um warning sobre o picker sugerindo que fosse utilizado
 // o @react-native-community/picker
 // import {View, Text, Picker, Button} from 'react-native';
 //import {Picker} from '@react-native-community/picker';
-import {View, Text, Button, SafeAreaView} from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 03:42 - TouchableOpacity
+import {View, Text, TouchableOpacity ,Button, SafeAreaView} from 'react-native';
+
+//import {Picker} from '@react-native-picker/picker';
+
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 04:29
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+
 
 
 // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 04:59
@@ -18,15 +26,24 @@ import BalanceLabel from '../../components/BalanceLabel';
 import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
 
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 10:05
+import RelativeDaysModal from '../../components/RelativeDaysModal';
+
+
 import styles from './styles';
 import EntrySummaryList from '../../components/EntrySummary/EntrySummaryList';
 import { ScrollView } from 'react-native-gesture-handler';
 
 
+import Colors from '../../styles/Colors';
 
 const Report = ({navigation}) => {
 
     const currentBalance = 2065.35;
+
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 08:45
+    const [relativeDaysModalVisible, setRelativeDaysModalVisible] = useState(false);
+
    
     // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 02:04 - Retirar
     // Adicionando as Props em Todos os Componentes - 11:22
@@ -48,7 +65,28 @@ const Report = ({navigation}) => {
                                 , {key: '4', description:  'Lazer', amount: 250}
                                 , {key: '5', description:  'Outros', amount: 1200}
                             ];
-    */                        
+    */   
+   
+   
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 20:32 - 
+    const [relativeDays, setRelativeDays] = useState(7);
+    
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 19:56 - 
+    const onRelativeDaysPress = item => {
+
+        setRelativeDays(item);
+
+        onRelativeDaysClosePress();
+    } ;
+
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 21:22 
+    const onRelativeDaysClosePress = () => {
+
+        setRelativeDaysModalVisible(false);
+
+    }
+
+
     return(
         <View style={styles.container}>
             <Text>Report</Text>
@@ -75,6 +113,9 @@ const Report = ({navigation}) => {
             </ActionFooter>
 
             <View>
+
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 03:23 - Remover picker */}
+                {/*                 
                 <Picker>
                     <Picker.Item label='Todas as categorias' />                     
                     <Picker.Item label='Categoria 1' />
@@ -89,6 +130,33 @@ const Report = ({navigation}) => {
                     <Picker.Item label='Últimos 15 dias' />                    
                     <Picker.Item label='Últimos 21 dias' />                    
                 </Picker>
+                */}
+
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 03:50 - TouchableOpacity */}
+                <TouchableOpacity  
+                    onPress={() => {
+                        setRelativeDaysModalVisible(true);
+                    }}
+                    style={styles.filterButton}
+                >
+                    <Text style={styles.filterButtonText}>{`Últimos ${relativeDays} dias`}</Text>
+
+                    <Icon 
+                        name='keyboard-arrow-down'
+                        size={20}
+                        color={Colors.champagneDark}
+                    />
+
+                </TouchableOpacity>
+
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 10:24  */}
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 22:01 - onConfirm  */}
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 22:10 - onCancel  */}
+                <RelativeDaysModal 
+                    isVisible={relativeDaysModalVisible}
+                    onConfirm={onRelativeDaysPress}
+                    onCancel={onRelativeDaysClosePress}
+                /> 
 
             </View>
 
@@ -102,7 +170,8 @@ const Report = ({navigation}) => {
                 {/* <EntrySummary entriesGrouped={entriesGrouped}/> */}
                 <EntrySummary />
 
-                <EntryList />
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 20:46 - days */}
+                <EntryList days={relativeDays} />
 
             </ScrollView>
 

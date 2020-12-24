@@ -52,7 +52,10 @@ const EntryList = ({days = 7, onEntryPress, onPressActionButton}) => {
         loadEntries();
 
         console.log( 'EntryList :: useEffect' );
-    }, []);
+
+
+        // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 25:11 - days    
+    }, [days]);
 
     return(
         // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 04:00 
