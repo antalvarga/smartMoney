@@ -1,29 +1,39 @@
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 04:11
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 15:18 - useState
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 03:02 - useEffect
-import React, { useEffect, useState } from 'react';
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 19:14 - remover import useEffect
+// import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 09:47 - Touchable
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 13:53 - Modal
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 07:39 - FlatList
-import {View, TouchableOpacity, Modal, FlatList, Text} from 'react-native';
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 18:15 - remover import Modal, FlatList foi transferido para ../components/CategoryModal 
+// import {View, TouchableOpacity, Modal, FlatList, Text} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 14:17 
-import ActionFooter, {ActionPrimaryButton, ActionSecondaryButton} from '../../../components/Core/ActionFooter'
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 18:15 - remover import ActionFooter foi transferido para ../components/CategoryModal 
+// import ActionFooter, {ActionPrimaryButton, ActionSecondaryButton} from '../../../components/Core/ActionFooter'
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 01:31
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 07:47 - separar as categorias deb / cred
 // import {getAllCategories} from '../../../services/Categories/';
-import { getDebitCategories, getCreditCategories} from '../../../services/Categories';
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 18:55 - remover import foi transferido para ../components/CategoryModal 
+// import { getDebitCategories, getCreditCategories} from '../../../services/Categories';
 
 import { getEntries } from '../../../services/Entries';
 
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 19:23 - import CategoryModal
+import CategoryModal from '../../../components/CategoryModal';
 
 
 import styles from './styles';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 01:40 - Receber onChangeCatory
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 11:50 - transferir props para ../components/CategoryModal 
 const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
+// const NewEntryCategoryPicker = ({}) => {
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 15:00 - useState
     const [modalVisible, setModalVisible] = useState(false);
@@ -33,12 +43,17 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
     // const [allCategories, setAllCategories] = useState([]);
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 20:20
     // const [categories, setCategories] = useState([]);
-    const [creditCategories, setCreditCategories] = useState([]);
-    const [debitCategories, setDebitCategories] = useState([]);
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 14:14 - Transferir creditCategories e debitCategories para ../components/CategoryModal 
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 18:32 - Limpeza de creditCategories e debitCategories para ../components/CategoryModal 
+    //const [creditCategories, setCreditCategories] = useState([]);
+    // const [debitCategories, setDebitCategories] = useState([]);
     
 
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 03:11
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 13:55 - transferido para ../components/CategoryModal 
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 18:50 - Limpeza do useEffect pois foi transferido para ../components/CategoryModal 
+    /*
     useEffect( () => {
         async function loadCategories() {
 
@@ -70,7 +85,7 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
         console.log( 'NewEntryCategoryPicker :: useEffect');
 
     }, []);
-    
+    */
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 12:10
     const onCategoryPress = item => {
@@ -99,63 +114,18 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
             <TouchableOpacity style={styles.pickerButton} onPress={() => {setModalVisible(true); }}>
                 <Text style={styles.pickerButtonText}>{category.name}</Text>
             </TouchableOpacity>
-
+            
             {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 14:12 - modal */}
-            <Modal
-                animationType='slide'
-                transparent={false}
-                visible={modalVisible}
-            >
+            {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 09:16 - transferir o modal para ../components/CategoryModal */}
+            {/* Modal ... */}
 
-                {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 -     */}
-                <View style={ styles.modal }>
-
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 08:00 */}
-                    <FlatList 
-                        // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 21:27 
-                        // data={categories} - condicao ternaria - if aninhado
-                        data = {debit ? debitCategories : creditCategories }
-                        keyExtractor={item => item.id}
-                        renderItem={({item}) => (
-
-                            <TouchableOpacity 
-                                style={styles.modalItem}
-                                // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 12:49
-                                // onPress={() => {onChangeCategory(item)}}                            
-                                onPress={() => onCategoryPress(item)}
-                            >
-                                <Text style={[styles.modalItemText, {color: item.color}]}>{item.name}</Text>
-                            </TouchableOpacity>
-
-                        )}
-                    />
-
-
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 -  17:02 */}
-                    {/* <Text>Modal</Text> */}
-
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 -  16:09*/}
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 12:24 - onClosePress                             */}
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:36 */}
-                    {/*                     
-                    <TouchableOpacity 
-                        style={styles.closeButton}
-                        // onPress={() => {setModalVisible(false); }}
-                        onPress={onClosePress}
-                    >
-                        <Text style={styles.closeButtonText}>Fechar</Text>
-                    </TouchableOpacity> 
-                    */}
-
-                    {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:06 */}
-                    <ActionFooter>
-                        <ActionPrimaryButton title='Fechar' onPress={onClosePress} />
-                    </ActionFooter>
-
-                </View>
-
-
-            </Modal>
+            {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 19:37 - CategoryModal */}
+            <CategoryModal 
+                categoryType={ debit ? 'debit' : 'credit' }
+                isVisible={modalVisible}
+                onConfirm={onCategoryPress}
+                onCancel={onClosePress}
+            />
 
         </View>
     );

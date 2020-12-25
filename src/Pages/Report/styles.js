@@ -11,6 +11,13 @@ const styles = StyleSheet.create({
         //, padding: 10
         , 
     }
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 04:13
+    , filtersContainer: {
+        flexDirection: 'row'
+        , justifyContent: 'center'
+        , marginVertical: 5
+        , 
+    }
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 05:47 - 
     , filterButton: {
         flexDirection: 'row'

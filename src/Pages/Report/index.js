@@ -10,32 +10,36 @@ import {View, Text, TouchableOpacity ,Button, SafeAreaView} from 'react-native';
 
 //import {Picker} from '@react-native-picker/picker';
 
+import { ScrollView } from 'react-native-gesture-handler';
+
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 04:29
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
-
 
 
 // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 04:59
 import ActionFooter, {ActionPrimaryButton} from '../../components/Core/ActionFooter';
 
-
 // Adicionando as Props em Todos os Componentes - 01:57
 // import EntryLabel from '../../components/BalanceLabel';
+import EntryList from '../../components/EntryList';
+
 import BalanceLabel from '../../components/BalanceLabel';
 import EntrySummary from '../../components/EntrySummary';
-import EntryList from '../../components/EntryList';
+
 
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 10:05
 import RelativeDaysModal from '../../components/RelativeDaysModal';
 
-
-import styles from './styles';
 import EntrySummaryList from '../../components/EntrySummary/EntrySummaryList';
-import { ScrollView } from 'react-native-gesture-handler';
+
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 22:20
+import CategoryModal from '../../components/CategoryModal';
 
 
 import Colors from '../../styles/Colors';
+
+import styles from './styles';
+
 
 const Report = ({navigation}) => {
 
@@ -45,6 +49,10 @@ const Report = ({navigation}) => {
     const [relativeDaysModalVisible, setRelativeDaysModalVisible] = useState(false);
 
    
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 05:26
+    const [categoryModalVisible, setCategoryModalVisible]= useState(false);
+
+
     // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 02:04 - Retirar
     // Adicionando as Props em Todos os Componentes - 11:22
     /*
@@ -71,6 +79,9 @@ const Report = ({navigation}) => {
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 20:32 - 
     const [relativeDays, setRelativeDays] = useState(7);
     
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 05:47
+    const [category, setCategory] = useState( {id: null, name: 'Todas categorias'})                            
+
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 19:56 - 
     const onRelativeDaysPress = item => {
 
@@ -79,6 +90,16 @@ const Report = ({navigation}) => {
         onRelativeDaysClosePress();
     } ;
 
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 24:00
+    const onCategoryPress = item => {
+
+        setCategory(item);
+
+        onCategoryClosePress();
+
+    };
+
+
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 21:22 
     const onRelativeDaysClosePress = () => {
 
@@ -86,6 +107,11 @@ const Report = ({navigation}) => {
 
     }
 
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 24:25 - 
+    const onCategoryClosePress = () => {
+
+        setCategoryModalVisible(false);
+    }
 
     return(
         <View style={styles.container}>
@@ -112,7 +138,8 @@ const Report = ({navigation}) => {
                 />
             </ActionFooter>
 
-            <View>
+            {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 03:53 - estilizar */}
+            <View style={styles.filtersContainer}>
 
                 {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 03:23 - Remover picker */}
                 {/*                 
@@ -158,6 +185,30 @@ const Report = ({navigation}) => {
                     onCancel={onRelativeDaysClosePress}
                 /> 
 
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 03:31 -  */}
+                <TouchableOpacity 
+                    style={styles.filterButton}
+                    onPress={() => {setCategoryModalVisible(true); }}                
+                >
+
+                    <Text style={styles.filterButtonText}>{category.name}</Text>
+
+                    <Icon 
+                        name='keyboard-arrow-down'
+                        size={20}
+                        color={Colors.champagneDark}
+                    />
+
+                </TouchableOpacity>
+
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 22:39 */}
+                <CategoryModal 
+                    categoryType='all'
+                    isVisible={categoryModalVisible}
+                    onConfirm={onCategoryPress}
+                    onCancel={onCategoryClosePress}
+                />
+
             </View>
 
 
@@ -171,7 +222,8 @@ const Report = ({navigation}) => {
                 <EntrySummary />
 
                 {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 20:46 - days */}
-                <EntryList days={relativeDays} />
+                {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 27:04 - category */}
+                <EntryList days={relativeDays} category={category}/>
 
             </ScrollView>
 

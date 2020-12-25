@@ -10,11 +10,14 @@ const styles = StyleSheet.create({
         ,
 
     }
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 10:38 - transferido para ../components/CategoryModal */}
+    /*
     , modal: {
         flex: 1
         , backgroundColor: Colors.background
         ,
     }
+    */
     , pickerButton: {
         backgroundColor: Colors.asphalt
         , borderRadius: 15
@@ -29,6 +32,8 @@ const styles = StyleSheet.create({
         , textAlign: 'center'
         , 
     }
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 11:32 - transferido para ../components/CategoryModal */}
+    /*
     , modalItem: {
         backgroundColor: Colors.asphalt
         , borderRadius: 15
@@ -43,6 +48,7 @@ const styles = StyleSheet.create({
         , textAlign: 'center'
         , 
     }
+    */
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 15:43 - pode apagar
     /*
     , closeButton: {

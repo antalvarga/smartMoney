@@ -29,7 +29,8 @@ import styles from './styles';
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 26:40 - onEntryPress    
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 29:23 - onPressActionButton    
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 06:52 - days
-const EntryList = ({days = 7, onEntryPress, onPressActionButton}) => {
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 26:23 - category
+const EntryList = ({days = 7, category, onEntryPress, onPressActionButton}) => {
 
     // Aula: Listando todos os lançamentos - 15:14 - useState
     [entries, setEntries] = useState([]);
@@ -45,7 +46,8 @@ const EntryList = ({days = 7, onEntryPress, onPressActionButton}) => {
         // 17:52
         async function loadEntries() {
             // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 22:51 - days
-            const data = await getEntries( days );
+            // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 26:27 - category
+            const data = await getEntries( days, category );
             setEntries(data);
         }
 
@@ -55,7 +57,8 @@ const EntryList = ({days = 7, onEntryPress, onPressActionButton}) => {
 
 
         // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 25:11 - days    
-    }, [days]);
+        // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 26:37 - category
+    }, [days, category]);
 
     return(
         // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 04:00 

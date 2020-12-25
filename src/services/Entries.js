@@ -19,7 +19,8 @@ import moment from '../vendors/moment';
 
 
 // Aula: Listando todos os lançamentos - 07:15
-export const getEntries = async (days) => {
+// Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 00:58 - category
+export const getEntries = async (days, category) => {
     
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 1 - 20:36 - let
     // será necessario pq iremos alterando os parâmetros
@@ -37,6 +38,16 @@ export const getEntries = async (days) => {
         const date = moment().subtract(days, 'days').toDate();
         
         realm = realm.filtered('entryAt >= $0', date);
+
+    }
+
+    // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 01:20
+    // Se category existe e se category.id existe
+    if(category && category.id) {
+
+        console.log( 'getEntries :: category ', JSON.stringify(category));
+
+        realm = realm.filtered('category == $0', category);
 
     }
 
