@@ -20,11 +20,19 @@ const styles = StyleSheet.create({
         , paddingHorizontal: 30
         , paddingVertical: 10
         , marginVertical: 10
+        // Aula: Hook useBalance - 11:31 - Evitar a piscada que 
+        // dá no useEffect
+        , minWidth: 200
+        // Aula: Hook useBalance - 11:51
+        , justifyContent: 'center'
+        , alignContent: 'center'
         ,
     }
     , value: {
         fontSize: 28
         , color: Colors.white
+        // Aula: Hook useBalance - 12:33
+        , textAlign: 'center'
         ,
     }
 })

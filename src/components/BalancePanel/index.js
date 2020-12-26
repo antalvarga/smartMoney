@@ -1,4 +1,5 @@
-import React from 'react';
+// Aula: Hook useBalance - 08:19 - useState
+import React, {useState} from 'react';
 
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 15:41 - TouchableOpacity
 // import {View, Button } from 'react-native';
@@ -20,19 +21,20 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 Icon.loadFont();
 
 /*
-
 import Icon from 'react-native-vector-icons/FontAwesome';
 const myIcon = <Icon name="rocket" size={30} color="#900" />;
-
-
 
 google
 react-native+react-native-vector-icons/FontAwesome+ erro+unreconized font family 'FontAwesome'
 */
 
 
+// Aula: Hook useBalance - 08:06 - useBalance
+import useBalance from '../../hooks/useBalance';
+
 import Colors from '../../styles/Colors';
 import styles from './styles';
+
 
 
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:15
@@ -40,7 +42,11 @@ import styles from './styles';
 const BalancePanel = ({onNewEntryPress}) => {
     
     // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:13
-    const currentBalance = 2064.35;
+    // Aula: Hook useBalance - 08:28 - Remover currentBalance
+    // const currentBalance = 2064.35;
+
+    // Aula: Hook useBalance - 08:28 - 
+    const [balance] = useBalance();
 
     return(
         // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 15:00
@@ -51,7 +57,9 @@ const BalancePanel = ({onNewEntryPress}) => {
                 colors={[Colors.violet, Colors.blue]}
                 style={styles.panel}
             >
-                <BalancePanelLabel currentBalance={currentBalance}/>
+                {/* // Aula: Hook useBalance - 08:38 - trocar currentBalance por balance */}
+                {/* <BalancePanelLabel currentBalance={currentBalance}/> */}
+                <BalancePanelLabel currentBalance={balance}/>
                 <BalancePanelChart />
 
                 {/* <Button title='Add' /> */}
