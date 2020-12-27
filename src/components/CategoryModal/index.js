@@ -1,7 +1,9 @@
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 07:50
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 14:04 - importar useEffect
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 14:21 - importar useState
-import React, { useState, useEffect } from 'react';
+// Aula: Hook useCategories - 08:27 - Remover useState e useEffect
+// import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 09:34 - Importar Modal, FlatList, TouchableOpacity
 import {Modal, View, FlatList, TouchableOpacity, Text} from 'react-native';
@@ -9,8 +11,13 @@ import {Modal, View, FlatList, TouchableOpacity, Text} from 'react-native';
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 09:34 - Importar Modal, FlatList, TouchableOpacity
 import ActionFooter, {ActionPrimaryButton} from '../Core/ActionFooter';
 
+// Aula: Hook useCategories - 06:51
+import useCategories from '../../hooks/useCategories';
+
+
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 14:33 - import
-import {getDebitCategories, getCreditCategories, getAllCategories } from '../../services/Categories';
+// Aula: Hook useCategories - 07:45 - remover
+//import {getDebitCategories, getCreditCategories, getAllCategories } from '../../services/Categories';
 
 
 import styles from './styles';
@@ -29,14 +36,19 @@ import styles from './styles';
 // const CategoryModal = ({debit, isVisible, onConfirm, onCancel}) => {
 const CategoryModal = ({categoryType, isVisible, onConfirm, onCancel}) => {
 
+    // Aula: Hook useCategories - 07:31 - Substituir por useCategories()
+    /*
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 14:16 - creditCategories e debitCategories recebido de NewEntryCategoryPicker
     const [creditCategories, setCreditCategories] = useState([]);
     const [debitCategories, setDebitCategories] = useState([]);
 
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 15:45 - AllCategories
     const [allCategories, setAllCategories] = useState([]);
+    */
+    const [debitCategories, creditCategories, allCategories] = useCategories();
 
-
+    // Aula: Hook useCategories - 07:36 - remover useEffect
+    /*
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 3 - 03:11
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 13:58 - recebido de NewEntryCategoryPicker
     useEffect( () => {
@@ -74,7 +86,7 @@ const CategoryModal = ({categoryType, isVisible, onConfirm, onCancel}) => {
         console.log( 'NewEntryCategoryPicker :: useEffect');
 
     }, []);
- 
+    */
 
     return(
         
