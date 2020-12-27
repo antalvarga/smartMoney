@@ -1,7 +1,9 @@
 
 // Aula: Listando todos os lançamentos - 11:42 - useEffect
 // Aula: Listando todos os lançamentos - 15:14 - useState
-import React, {useEffect, useState} from 'react';
+// Aula: Hook useEntries - 05:57 - Remover - useEffect , useState pois estamos usando useEntries
+// import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 // Aula: Editando dados de um lançamento - 03:39 - Button
 import {View, Text, Button, FlatList} from 'react-native';
@@ -10,6 +12,9 @@ import EntryListItem from './EntryListIem';
 
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 03:38
 import Container from '../../components/Core/Container';
+
+// Aula: Hook useEntries - 04:44
+import useEntries from '../../hooks/useEntries';
 
 // Aula: Listando todos os lançamentos - 16:03
 import {getEntries} from '../../services/Entries';
@@ -33,9 +38,14 @@ import styles from './styles';
 const EntryList = ({days = 7, category, onEntryPress, onPressActionButton}) => {
 
     // Aula: Listando todos os lançamentos - 15:14 - useState
-    [entries, setEntries] = useState([]);
+    // Aula: Hook useEntries - 05:12 - substituir useState por useEntries
+    // [entries, setEntries] = useState([]);
+    // Aula: Hook useEntries - 05:29 days, category
+    const [entries] = useEntries(days, category);
 
     // Aula: Listando todos os lançamentos - 11:42 - useEffect
+    // Aula: Hook useEntries - 05:20 - Remover useEffect
+    /*
     useEffect( () => {
 
         // Aula: Listando todos os lançamentos - 17:00
@@ -59,6 +69,7 @@ const EntryList = ({days = 7, category, onEntryPress, onPressActionButton}) => {
         // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 25:11 - days    
         // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 26:37 - category
     }, [days, category]);
+    */
 
     return(
         // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 1 - 04:00 

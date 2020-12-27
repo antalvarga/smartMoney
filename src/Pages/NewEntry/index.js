@@ -1,4 +1,3 @@
-
 // Criando o formulário de entrada de lançamentos - 03:57
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
@@ -13,11 +12,14 @@ import BalanceLabel from '../../components/BalanceLabel';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 06:46
 import NewEntryInput from './NewEntryInput';
 
+// Aula: Hook useEntries - 07:06 - Remover saveEntry, deleteEntry
+/*
 // Criando o formulário de entrada de lançamentos  - 08:01 
 import {saveEntry} from '../../services/Entries';
 
 // Aula: Excluindo os lançamentos - 07:36
 import {deleteEntry} from '../../services/Entries';
+*/
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 08:18 - importar NewEntryCategoryPicker
 import NewEntryCategoryPicker from './NewEntryCategoryPicker';
@@ -27,6 +29,9 @@ import NewEntryDatePicker from './NewEntryDatePicker';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:06
 import NewEntryDeleteAction from './NewEntryDeleteAction';
+
+// Aula: Hook useEntries - 06:23 
+import useEntries from '../../hooks/useEntries';
 
 
 import styles from './styles';
@@ -50,6 +55,10 @@ const NewEntry = ({navigation}) => {
         , 
     });
     
+    // Aula: Hook useEntries - 06:46
+    // Aula: Hook useEntries - 07:39 - 
+    // const [entries, saveEntry, deleteEntry] = useEntries()
+    const [, saveEntry, deleteEntry] = useEntries()
 
     // Aula: Editando dados de um lançamento - 07:57
     // const [amount, setAmount] = useState( '0.00' );
