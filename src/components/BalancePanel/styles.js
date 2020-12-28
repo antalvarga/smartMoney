@@ -5,17 +5,13 @@ import Colors from '../../styles/Colors';
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1
-        // , alignItems: 'center'
-        // ,
-        // paddingVertical: 10
         
     }
     , panel: {
-        paddingVertical: 10
-        , alignItems: 'center'
-        , justifyContent: 'center'
+        // Aula: Gráfico de evolução do saldo - Parte 1 - 05:36
+        paddingVertical: 3        
         ,
+        
     }
     , button: {
         backgroundColor: Colors.green

@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 13:30
         , padding: 15
+        // Aula: Gráfico de evolução do saldo - Parte 1 - 07:33 - zIndex
+        , zIndex: 1
         , 
 
     }
