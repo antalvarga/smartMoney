@@ -36,7 +36,16 @@ const BalancePanelChart = () => {
 
     const fill = 'rgb(134, 65, 244)'
     
-    
+    // Aula: Gráfico de evolução do saldo - Parte 2 - 01:44 - transpor saldo
+    // D -8 = Saldo do dia
+    // D -7 = Saldo do dia + D -8
+    // D -6 = Saldo do dia + D -7
+    // D -5 = Saldo do dia + D -6
+    // D -4 = Saldo do dia + D -5
+    // D -3 = Saldo do dia + D -4
+    // D -2 = Saldo do dia + D -3
+    // D -1 = Saldo do dia + D -2
+
     return(
         
         <View style={styles.container} >
