@@ -54,7 +54,11 @@ const BalancePanel = ({onNewEntryPress}) => {
 
             <LinearGradient 
                 // colors={['#4c669f', '#192f69']}
-                colors={[Colors.violet, Colors.blue]}
+                // Preferencia pessoal
+                // colors={[Colors.violet, Colors.blue]}
+                
+                // colors={['#4c669f', '#192f69']}
+                colors={[Colors.background, Colors.blue]}
                 style={styles.panel}
             >
                 {/* // Aula: Hook useBalance - 08:38 - trocar currentBalance por balance */}

@@ -25,7 +25,7 @@ const EntrySummaryList = ({entriesGrouped}) => {
             */}
             <FlatList
                 data={entriesGrouped}
-                renderItem={({item}) => <Text style={styles.entry}>{item.description} - $ {item.amount}</Text>}
+                renderItem={({item}) => <Text style={styles.entry}>{item.description} - <Text style={styles.entryAmount}>$ {item.amount}</Text> </Text>}
             /> 
 
 

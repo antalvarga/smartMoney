@@ -10,7 +10,9 @@ const styles = StyleSheet.create({
     container: {
         // flex: 1
         // ,
-        backgroundColor: Colors.asphalt
+        // Preferencia pessoal
+        // backgroundColor: Colors.asphalt
+        backgroundColor: Colors.asphaltDark
         , margin: 5
         , padding: 10
         , marginTop: -18
@@ -18,14 +20,30 @@ const styles = StyleSheet.create({
         , borderRadius: 5
         , borderStyle: 'solid'
         , borderWidth: 1
-        , borderColor: 'rgba(255, 255, 255, 0.2)'   // Colors.white
+        // , borderColor: 'rgba(255, 255, 255, 0.2)'   // Colors.white
+        // Preferencia pessoal
+        , borderColor: Colors.blueDark
         ,
     }
+    // Preferencia pessoal
+    , divider: {
+        // borderBottomColor: '#fff'
+        borderBottomColor: Colors.blueDark
+        , borderBottomWidth: 2
+        , width: 170
+        , marginTop: 8
+        , marginBottom: 25
+        , marginRight: 0
+      }    
     // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 08:52
     , title: {
-        fontSize: 12
+        
+        // Preferencia pessoal
+        fontSize: 16
         //, fontWeight: 'bold'
-        , color: Colors.white
+        // Preferencia pessoal
+        // , color: Colors.white
+        , color: Colors.blueDark
         , marginTop: 10
         , marginBottom: 5
         , 
@@ -35,6 +53,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
         , alignItems: 'center'
         , justifyContent: 'center'
+        , marginTop: 20
         , 
     }
     // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 15:26

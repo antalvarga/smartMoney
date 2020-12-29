@@ -21,8 +21,10 @@ const styles = StyleSheet.create({
     // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 05:47 - 
     , filterButton: {
         flexDirection: 'row'
+        // Preferencia pessoal
         //, borderColor: Colors.champagneDark
-        , borderColor: Colors.green
+        // , borderColor: Colors.green
+        , borderColor: Colors.blue
         , borderWidth: 1
         , borderRadius: 150
         , paddingVertical: 5

@@ -31,6 +31,7 @@ const BalanceLabel = () => {
             <Text style={styles.label}>Saldo Atual</Text>
 
             <LinearGradient style={styles.panel} colors={[Colors.violet, Colors.blue]}>
+            {/* <LinearGradient style={styles.panel} colors={[Colors.blueDark, Colors.blue]} > */}
                 {/* // Aula: Hook useBalance - 09:35 - trocar currentBalance por balance */}
                 {/* <Text style={styles.value}>{currentBalance}</Text> */}
                 <Text style={styles.value}>{balance}</Text>

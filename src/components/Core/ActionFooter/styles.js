@@ -19,14 +19,18 @@ const styles = StyleSheet.create({
     , primaryButton: {
         borderRadius: 50
         , borderWidth: 1
-        , borderColor: Colors.green
+        // Preferencia pessoal
+        // , borderColor: Colors.green
+        , borderColor: Colors.blue
         , paddingVertical: 10
         , paddingHorizontal: 20
     }
     , primaryButtonText: {
         fontSize: 18
         , textAlign: 'center'
-        , color: Colors.green
+        // Preferencia pessoal
+        // , color: Colors.green
+        , color: Colors.blue
         ,
     }
     // // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 10:46 

@@ -15,12 +15,14 @@ const styles = StyleSheet.create({
     , label: {
         fontSize: 14
         , color: Colors.white
+        , alignSelf: 'center'
         ,
     }
     , value: {
         fontSize: 36
         , color: Colors.white
-        ,
+        , alignSelf: 'center'
+        , 
     }
 });
 

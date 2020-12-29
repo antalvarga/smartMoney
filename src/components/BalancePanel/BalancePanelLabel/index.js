@@ -6,7 +6,7 @@ import styles from './styles';
 const BalancePanelLabel = ({currentBalance}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>Saldo atual</Text>
+            <Text style={styles.label}>Saldo s atual</Text>
             <Text style={styles.value}>{currentBalance}</Text>
         </View>
     );

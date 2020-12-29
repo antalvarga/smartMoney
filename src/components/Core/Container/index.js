@@ -27,8 +27,10 @@ const Container = ({title
             {/* Aplicar condicao ternaria */}
             { title && (
                 <Text style={styles.title}>{title}</Text>
+                
             )}
 
+            <View style={styles.divider}></View>
 
             {children}
 
