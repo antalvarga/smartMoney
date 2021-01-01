@@ -3,8 +3,8 @@ import React from 'react';
 // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 06:25 - 
 // Retirar as importacoes desnecessarias
 //import {View, Text, TouchableOpacity} from 'react-native';
-
-import styles from './styles';
+// Aula: Gráfico de lançamentos por categoria - Parte 1 - 07:59 
+import {View} from 'react-native';
 
 // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 16:34
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -15,6 +15,8 @@ import Container from '../Core/Container';
 
 import EntrySummaryChart from './EntrySummaryChart';
 import EntrySummaryList from './EntrySummaryList';
+
+import styles from './styles';
 
 
 
@@ -31,7 +33,8 @@ const entriesGrouped = [
 // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31
 // const EntrySummary = ({entriesGrouped}) => {
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 30:33 - onPressActionButton    
-const EntrySummary = ({onPressActionButton}) => {
+// Aula: Gráfico de lançamentos por categoria - Parte 1 - 08:58 - days
+const EntrySummary = ({days = 7, onPressActionButton}) => {
     return(
     
         // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 03:00
@@ -42,8 +45,10 @@ const EntrySummary = ({onPressActionButton}) => {
         // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 07:47 - title
         //<Container title='Categoriass' actionLabelText='Últimos 70 dias' actionButtonText='Ver mais detalhes...'> 
         <Container 
-            title='Categoriass' 
-            actionLabelText='Últimos 70 dias' 
+            title='Categorias' 
+            // Aula: Gráfico de lançamentos por categoria - Parte 1 - 09:00 - actionLabelText
+            // actionLabelText='Últimos 7 dias' 
+            actionLabelText={`Últimos ${days} dias`}
             actionButtonText='Ver mais detalhes...'
             onPressActionButton={onPressActionButton}
         > 
@@ -52,10 +57,14 @@ const EntrySummary = ({onPressActionButton}) => {
             {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 05:05 */}
             {/* Text transferido para o component> core> Container */}
             {/* <Text style={styles.title}>Categorias</Text> */}
+            {/* // Aula: Gráfico de lançamentos por categoria - Parte 1 - 06:59 - View */}
+            <View style={styles.inner}>
 
-            <EntrySummaryChart />
+                <EntrySummaryChart />
 
-            <EntrySummaryList entriesGrouped={entriesGrouped} />
+                <EntrySummaryList entriesGrouped={entriesGrouped} />
+
+            </View>
 
             {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 05:05 */}
             {/* Text transferido para o component> core> Container */}

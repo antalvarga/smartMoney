@@ -75,6 +75,13 @@ const styles = StyleSheet.create({
 
     }
 */
+    // Aula: Gráfico de lançamentos por categoria - Parte 1 - 07:46 - inner
+    inner: {
+        flexDirection: 'row'
+        , paddingVertical: 10
+        ,
+    }
+    ,
 
 });
 

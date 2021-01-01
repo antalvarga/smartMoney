@@ -108,4 +108,21 @@ export const getBalanceSumByDate = async days => {
 };
 
 
+// Aula: Gráfico de lançamentos por categoria - Parte 2 - 0:24 - 
+export const getBalanceSumByCategory = async (days, showOthers = true) => {
+
+    const realm = await getRealm();
+
+    let entries = realm.objects('Entry');
+
+    if (days > 0 ) {
+        const date = moment().subtract(days, 'days').toDate();
+        entries = entries.filtered('entryAt >= $0', date);
+    }
+    
+    entries = entries.sorted('entryAt');
+
+    return entries;
+    
+};
 
