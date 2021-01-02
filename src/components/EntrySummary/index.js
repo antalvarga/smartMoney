@@ -16,11 +16,16 @@ import Container from '../Core/Container';
 import EntrySummaryChart from './EntrySummaryChart';
 import EntrySummaryList from './EntrySummaryList';
 
+// Aula: Gráfico de lançamentos por categoria - Parte 2 - 08:08 - importar hook
+import useBalanceSumByCategory from '../../hooks/useBalanceSumByCategory';
+
 import styles from './styles';
 
 
 
 // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31
+// Aula: Gráfico de lançamentos por categoria - Parte 2 - 09:01 - remover entreisGrouped
+/*
 const entriesGrouped = [
     {key: '1', description:  'Alimentação', amount: 201}
     , {key: '2', description:  'Combustível', amount: 11}
@@ -28,13 +33,17 @@ const entriesGrouped = [
     , {key: '4', description:  'Lazer', amount: 250}
     , {key: '5', description:  'Outros', amount: 1200}
 ];
-
+*/
 
 // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31
 // const EntrySummary = ({entriesGrouped}) => {
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 30:33 - onPressActionButton    
 // Aula: Gráfico de lançamentos por categoria - Parte 1 - 08:58 - days
 const EntrySummary = ({days = 7, onPressActionButton}) => {
+
+    // Aula: Gráfico de lançamentos por categoria - Parte 2 - 08:37
+    const [balanceSum] = useBalanceSumByCategory( days );
+
     return(
     
         // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 03:00
@@ -60,9 +69,13 @@ const EntrySummary = ({days = 7, onPressActionButton}) => {
             {/* // Aula: Gráfico de lançamentos por categoria - Parte 1 - 06:59 - View */}
             <View style={styles.inner}>
 
-                <EntrySummaryChart />
+                {/* // Aula: Gráfico de lançamentos por categoria - Parte 2 - 08:52 - data */}
+                {/* <EntrySummaryChart /> */}
+                <EntrySummaryChart data={balanceSum} />
 
-                <EntrySummaryList entriesGrouped={entriesGrouped} />
+                {/* // Aula: Gráfico de lançamentos por categoria - Parte 2 - 08:57 - data */}
+                {/* <EntrySummaryList entriesGrouped={entriesGrouped} /> */}
+                <EntrySummaryList data={balanceSum} />
 
             </View>
 

@@ -63,8 +63,8 @@ const BalancePanelChart = () => {
             <BarChart 
                 style={styles.chart} 
                 // Aula: Gráfico de evolução do saldo - Parte 2 - 29:00 - trocar data por balanceSum
-                //data={data}
-                data={balanceSum}
+                data={data}
+                //data={balanceSum}
                 svg={{fill: 'rgba(0,0,0, .1)', stroke: 'rgba(0,0,0, .1)' , strokeWidth: 1, }}
                 contentInset={{top: 0, bottom: 0}}
             />

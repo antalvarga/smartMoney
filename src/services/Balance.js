@@ -18,9 +18,7 @@ export const getBalance = async (untilDays = 0) => {
 
     let entries = realm.objects('Entry');
 
-
     //console.log( `getBalance :: untilDays ${untilDays}`);
-    
     
     // Aula: Gráfico de evolução do saldo - Parte 2 - 05:36 
     if(untilDays > 0) {
@@ -53,7 +51,7 @@ export const getBalanceSumByDate = async days => {
 
     // Aula: Gráfico de evolução do saldo - Parte 2 - 04:59 - days
     const startBalance = await getBalance(days) || 0;
-    console.log( `getBalanceSumByDate :: startBalance :: funfou ->  ${JSON.stringify(startBalance)}` );
+    //console.log( `getBalanceSumByDate :: startBalance :: funfou ->  ${JSON.stringify(startBalance)}` );
 
 
     // Aula: Gráfico de evolução do saldo - Parte 2 - 07:40
@@ -102,7 +100,7 @@ export const getBalanceSumByDate = async days => {
 
     // Aula: Gráfico de evolução do saldo - Parte 2 - 14:35 - console.log
     //console.log(` getBalanceSumByDate :: entries => ${JSON.stringify(entries)} `);
-    console.log(JSON.stringify(entries));
+    //console.log(JSON.stringify(entries));
 
     return entries;
 };
@@ -110,19 +108,37 @@ export const getBalanceSumByDate = async days => {
 
 // Aula: Gráfico de lançamentos por categoria - Parte 2 - 0:24 - 
 export const getBalanceSumByCategory = async (days, showOthers = true) => {
-
+    
     const realm = await getRealm();
-
+    
     let entries = realm.objects('Entry');
-
+    
     if (days > 0 ) {
         const date = moment().subtract(days, 'days').toDate();
+
         entries = entries.filtered('entryAt >= $0', date);
     }
     
-    entries = entries.sorted('entryAt');
+    // Aula: Gráfico de lançamentos por categoria - Parte 2 - 03:52 - 
+    entries = _(entries)
+                .groupBy(({category: {id}}) => id)
+                // Aula: Gráfico de lançamentos por categoria - Parte 2 - 12:47 - map
+                .map(entry => ({
+                    category: _.omit(entry[0].category, 'entries')                    
+                    // Aula: Gráfico de lançamentos por categoria - Parte 2 - 17:00
+                    // Ele diz pra usar valor absoluto e que não se deve usar valor negativo no grafico rs
+                    , amount: Math.abs(_.sumBy(entry, 'amount'))
+                    ,
+                }))
+                // Aula: Gráfico de lançamentos por categoria - Parte 2 - 17:23 - filter
+                .filter(({amount}) => amount > 0)
+                .orderBy('amount', 'desc');
+                
+    
+    // Aula: Gráfico de lançamentos por categoria - Parte 2 - 01:52 - 
+    console.log(` getBalanceSumByCategory :: entries => ${JSON.stringify(entries)} `);
 
     return entries;
-    
+
 };
 
