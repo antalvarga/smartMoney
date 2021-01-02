@@ -1,11 +1,19 @@
-// Aula: Hook useBalance - 
-import {getRealm} from './Realm';
 
 // Aula: Gráfico de evolução do saldo - Parte 2 - 10:34 - import lodash
 import _ from 'lodash';
 
 // Aula: Gráfico de evolução do saldo - Parte 2 - 05:43 - moment
 import moment from '../vendors/moment';
+
+// Aula: Hook useBalance - 
+import {getRealm} from './Realm';
+
+// Aula: Gráfico de lançamentos por categoria - Parte 3 - 17:34
+//import {getUUID} from './UUID';
+//import getUUID from '../services/UUID';
+import getUUID from '../services/UUID';
+
+import Colors from '../styles/Colors';
 
 
 
@@ -133,7 +141,31 @@ export const getBalanceSumByCategory = async (days, showOthers = true) => {
                 // Aula: Gráfico de lançamentos por categoria - Parte 2 - 17:23 - filter
                 .filter(({amount}) => amount > 0)
                 .orderBy('amount', 'desc');
-                
+    
+    // Aula: Gráfico de lançamentos por categoria - Parte 3 - 15:45
+    const otherLimit = 4;
+
+    if( showOthers && _.size(entries) >= otherLimit) {
+
+        
+
+        console.log( 'vai chamar getUUID ');
+        const getId = getUUID();
+        console.log( `ChamOU getUUID :: teste -> ${getId}` );
+    
+        const data1 = _(entries).slice(0, otherLimit);
+        const data2 = [
+            {
+                // Aula: Gráfico de lançamentos por categoria - Parte 3 - 17:51
+                category: {id: getId, name: 'Outros', color: Colors.metal}
+                , amount: _(entries).slice(otherLimit).map(({amount}) => amount ).sum()
+                , 
+            },
+        ];
+
+        // Aula: Gráfico de lançamentos por categoria - Parte 3 - 20:38
+        entries = [ ...data1, ...data2];
+    }
     
     // Aula: Gráfico de lançamentos por categoria - Parte 2 - 01:52 - 
     console.log(` getBalanceSumByCategory :: entries => ${JSON.stringify(entries)} `);

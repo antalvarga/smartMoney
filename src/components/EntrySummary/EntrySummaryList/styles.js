@@ -7,11 +7,15 @@ import Colors from '../../../styles/Colors';
 
 
 const styles = StyleSheet.create({
+
+    // Aula: Gráfico de lançamentos por categoria - Parte 3 - 13:55
+    // Passou para src> components> EntrySummary> EntrySummaryList> EntrySummaryListItem> Styles
     container: {
-        // flex: 1
-        // ,
-        marginTop: 30
-        , marginLeft: 10
+        
+        flex: 1
+        , marginTop: 10
+        , marginLeft: 5
+        
     }
     , title: {
         fontSize: 22

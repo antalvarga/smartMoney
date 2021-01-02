@@ -1,14 +1,22 @@
 import React from 'react';
 import { View, Text, FlatList} from 'react-native';
 
+// Aula: Gráfico de lançamentos por categoria - Parte 3 - 
+import EntrySummaryListItem from './EntrySummaryListItem';
+
 import styles from './styles';
+
+
+
 
 // Adicionando as Props em Todos os Componentes - 07:38
 // Aula: Gráfico de lançamentos por categoria - Parte 2 - 09:11 - substituir entriesGrouped por data
 // const EntrySummaryList = ({entriesGrouped}) => {
-    const EntrySummaryList = ({data}) => {
-        return(
-            <View style={styles.container}>
+const EntrySummaryList = ({data}) => {
+    return(
+         
+        // Aula: Gráfico de lançamentos por categoria - Parte 3 - 14:32 - remover View
+        <View style={styles.container}>
             {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 1 - 08:22 */}
             {/* <Text style={styles.title}>Categorias</Text> */}
 
@@ -36,11 +44,23 @@ import styles from './styles';
             /> 
             */}
 
+            {/* // Aula: Gráfico de lançamentos por categoria - Parte 3 -  */}
+            <FlatList 
+                style={styles.container}
+                data={data}
+                keyExtractor={item => item.category.id}
+                renderItem={({item}) => <EntrySummaryListItem entry={item}/> }
+            />
+
 
 
         </View>
     )
 };
+
+
+
+
 
 export default EntrySummaryList;
 
