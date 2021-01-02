@@ -219,7 +219,8 @@ const Report = ({navigation}) => {
 
                 {/* // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 02:20 - */}
                 {/* <EntrySummary entriesGrouped={entriesGrouped}/> */}
-                <EntrySummary />
+                {/* // Aula: Ajustando os gráficos do relatório - 00:41 - days */}
+                <EntrySummary days={relativeDays} />
 
                 {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 20:46 - days */}
                 {/* // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Categoria - 27:04 - category */}

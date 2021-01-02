@@ -109,13 +109,15 @@ export const getBalanceSumByDate = async days => {
     // Aula: Gráfico de evolução do saldo - Parte 2 - 14:35 - console.log
     //console.log(` getBalanceSumByDate :: entries => ${JSON.stringify(entries)} `);
     //console.log(JSON.stringify(entries));
-
+    
     return entries;
 };
 
 
 // Aula: Gráfico de lançamentos por categoria - Parte 2 - 0:24 - 
 export const getBalanceSumByCategory = async (days, showOthers = true) => {
+    
+    console.log(` getBalanceSumByCategory :: days => ${days} `);
     
     const realm = await getRealm();
     
@@ -145,13 +147,13 @@ export const getBalanceSumByCategory = async (days, showOthers = true) => {
     // Aula: Gráfico de lançamentos por categoria - Parte 3 - 15:45
     const otherLimit = 4;
 
-    if( showOthers && _.size(entries) >= otherLimit) {
+    // Aula: Ajustando os gráficos do relatório - 02:13 substituir >= por >
+    // if( showOthers && _.size(entries) >= otherLimit) {
+    if( showOthers && _.size(entries) > otherLimit) {
 
-        
-
-        console.log( 'vai chamar getUUID ');
+        // console.log( 'vai chamar getUUID ');
         const getId = getUUID();
-        console.log( `ChamOU getUUID :: teste -> ${getId}` );
+        //console.log( `ChamOU getUUID :: teste -> ${getId}` );
     
         const data1 = _(entries).slice(0, otherLimit);
         const data2 = [
