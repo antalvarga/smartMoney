@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "^3.0.8",
+    "@react-native-community/geolocation": "^2.0.2",
     "@react-native-picker/picker": "^1.9.6",
     "buffer": "^6.0.3",
     "lodash": "^4.17.20",

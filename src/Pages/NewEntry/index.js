@@ -6,7 +6,6 @@ import {View, Text, TextInput, Button} from 'react-native';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 08:01 - import 
 import ActionFooter, {ActionPrimaryButton, ActionSecondaryButton} from '../../components/Core/ActionFooter';
 
-
 import BalanceLabel from '../../components/BalanceLabel';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 1 - 06:46
@@ -27,12 +26,14 @@ import NewEntryCategoryPicker from './NewEntryCategoryPicker';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Data -07:10
 import NewEntryDatePicker from './NewEntryDatePicker';
 
+// Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 07:57
+import NewEntryAddressPicker from './NewEntryAddressPicker';
+
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:06
 import NewEntryDeleteAction from './NewEntryDeleteAction';
 
 // Aula: Hook useEntries - 06:23 
 import useEntries from '../../hooks/useEntries';
-
 
 import styles from './styles';
 
@@ -163,6 +164,9 @@ const NewEntry = ({navigation}) => {
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 16:06 - value */}
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 18:50 - onChange */}
                     <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
+
+                    {/* // Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 08:24 */}
+                    <NewEntryAddressPicker />
 
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:29 */}
                     <NewEntryDeleteAction entry={entry} onOkPress={onDelete}/>
