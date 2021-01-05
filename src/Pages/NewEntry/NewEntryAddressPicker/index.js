@@ -26,7 +26,7 @@ const getLocation = (latitude, longitude) => {
     // Aula: Adicionando Geolocalização no Aplicativo - Parte 2 - 08:46
     // Chave copiada vide url abaixo
     // https://console.cloud.google.com/apis/credentials?project=devsamurai-avop&supportedpurview=project
-    Geocoder.init('AIzaSyCxd3HmwKUzW1-eoYVHqmsXCAo05euiDGo');
+    
         
     // Aula: Adicionando Geolocalização no Aplicativo - Parte 2 - 10:11
     // Geocoder.from ({latitude, longitude}).then(json => {}).catch(error => {})
