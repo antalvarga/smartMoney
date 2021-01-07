@@ -53,6 +53,10 @@ const NewEntry = ({navigation}) => {
         , entryAt: new Date()
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 09:11 - category
         , category: {id: null, name: 'Selecione'}
+        // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 07:11 - address
+        , address: null
+        , latitude: null
+        , longitude: null
         , 
     });
     
@@ -79,6 +83,13 @@ const NewEntry = ({navigation}) => {
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 15:26 - 
     const [entryAt, setEntryAt] = useState(entry.entryAt);
 
+    // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 06:51 - address
+    const [address, setAddress] = useState(entry.address);
+    
+    // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 007:30 - latitude, longitude
+    const [latitude, setLatitude] = useState(entry.latitude);
+    const [longitude, setLongitude] = useState(entry.longitude);
+
 
 
 
@@ -99,6 +110,10 @@ const NewEntry = ({navigation}) => {
             , category: category
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 20:09 - entryAt
             , entryAt: entryAt
+            // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 09:37 - 
+            , address: address
+            , latitude: latitude
+            , longitude: longitude
             ,
         }
 
@@ -166,7 +181,15 @@ const NewEntry = ({navigation}) => {
                     <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
 
                     {/* // Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 08:24 */}
-                    <NewEntryAddressPicker />
+                    <NewEntryAddressPicker address={address} onChange={({latitude, longitude, address}) => {
+
+                        setLatitude(latitude);
+                        setLongitude(longitude);
+                        setAddress(address);
+
+                        console.log( 'NewEntry :: linha 190 :: ', latitude, address);
+
+                    }} />
 
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Excluir - 01:29 */}
                     <NewEntryDeleteAction entry={entry} onOkPress={onDelete}/>

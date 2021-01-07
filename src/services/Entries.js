@@ -72,9 +72,9 @@ export const saveEntry = async (value, entry = {}) => {
 
     let data = {};
 
-    console.log( 'vai chamar getUUID ');
+    //console.log( 'vai chamar getUUID ');
     const teste = getUUID();
-    console.log( `ChamOU getUUID :: teste -> ${teste}` );
+    //console.log( `ChamOU getUUID :: teste -> ${teste}` );
            
     // Criando o formulário de entrada de lançamentos - 11:23
     // Aula: Editando dados de um lançamento - 11:02 - Nào usar a linha abaixo
@@ -109,10 +109,15 @@ export const saveEntry = async (value, entry = {}) => {
             , isInit: false
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:36
             , category: value.category || entry.category
+
+            // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 10:30 - adrress
+            , address: value.address || entry.address
+            , latitude: value.latitude || entry.latitude
+            , longitude: value.longitude || entry. longitude
             ,
         };
        
-            console.log( ' saveEntry :: ', teste );
+            //console.log( ' saveEntry :: ', teste );
             
             realm.create('Entry', data, true);
         });

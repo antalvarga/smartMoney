@@ -18,7 +18,10 @@ const styles = StyleSheet.create({
         , margin: 5
         ,
     }
-    ,
+    , buttonActived : {
+        backgroundColor: Colors.blue
+        , 
+    }
 
 });
 
