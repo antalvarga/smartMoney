@@ -6965,6 +6965,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-native-camera@^3.40.5:
+  version "3.40.5"
+  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.40.5.tgz#00a9b7dc171793addca5bb45dda97a815b0f107c"
+  integrity sha512-ezQRmq4HgdnUlEM4Mich14so0hdxkHJWuLnVxwFzGgKLWoOagdyARf2+Setw/nzyNH8ccwmiqVyvqMMHHU1tcw==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-create-guid@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-create-guid/-/react-native-create-guid-1.1.0.tgz#a11ab03585c5a7a3b6034a645248e3f098dc1e97"

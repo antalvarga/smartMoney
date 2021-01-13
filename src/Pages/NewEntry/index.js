@@ -26,6 +26,10 @@ import NewEntryCategoryPicker from './NewEntryCategoryPicker';
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Data -07:10
 import NewEntryDatePicker from './NewEntryDatePicker';
 
+
+// Aula: Adicionando Câmera no Aplicativo - Parte 1 - 06:34
+import NewEntryCameraPicker from './NewEntryCameraPicker';
+
 // Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 07:57
 import NewEntryAddressPicker from './NewEntryAddressPicker';
 
@@ -179,6 +183,10 @@ const NewEntry = ({navigation}) => {
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 16:06 - value */}
                     {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 18:50 - onChange */}
                     <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
+                    
+                    {/* // Aula: Adicionando Câmera no Aplicativo - Parte 1 - 06:54 */}
+                    <NewEntryCameraPicker />
+
 
                     {/* // Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 08:24 */}
                     <NewEntryAddressPicker address={address} onChange={({latitude, longitude, address}) => {
