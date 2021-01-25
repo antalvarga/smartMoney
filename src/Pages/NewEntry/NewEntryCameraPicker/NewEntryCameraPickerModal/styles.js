@@ -38,6 +38,28 @@ const styles = StyleSheet.create({
         , right: 20
         ,
     }
+    // Aula: Adicionando Câmera no Aplicativo - Parte 3 - 03:15
+    , imagePreview: {
+        width: '100%'
+        , height: '100%'
+    }
+    , pictureButtonActions: {
+        flex: 0
+        , flexDirection: 'row'
+        , justifyContent: 'space-between'
+        , width: '100%'
+        , position: 'absolute'
+        , bottom: 20
+        ,
+    }
+    , buttonClose: {
+        marginLeft: 20
+        ,
+    }
+    , buttonCheck: {
+        marginRight: 20
+        , 
+    }
 });
 
 

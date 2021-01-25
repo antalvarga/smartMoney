@@ -4,7 +4,8 @@ import React, {useState} from 'react';
 
 // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 01:03
 // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 05:58 - Alert
-import {Alert, View, Modal, Text} from 'react-native';
+// Aula: Adicionando Câmera no Aplicativo - Parte 3 - 00:39 - ImageBackGround
+import {Alert, View, Modal, ImageBackground, Text} from 'react-native';
 
 // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 01:05 - Transferido do NewEntryCameraPicker
 import {RNCamera} from 'react-native-camera';
@@ -68,39 +69,74 @@ const NewEntryCameraPickerModal = ({photo, isVisible, onChangePhoto, onDelete, o
                 // visible={showModal}
                 visible={isVisible}
             >
-                <RNCamera
-                    ref={ref => setCamera(ref)}
-                    // Aula: Adicionando Câmera no Aplicativo - Parte 1 - 16:52
-                    // style={{flex: 1, }}
-                    style={styles.camera}
-                    type={RNCamera.Constants.Type.back}
-                    autoFocus={RNCamera.Constants.AutoFocus.on}
-                    flashMode={RNCamera.Constants.FlashMode.on}
-                    captureAudio={false}                    
-                    androidCameraPermissionOptions={{
-                        title: 'Permissão para usar a câmera'
-                        , message: 'Precisamos da sua permissão'
-                        , buttonPositive: 'OK'
-                        , buttonNegative: 'Cancelar'
-                        ,
-                    }}
-                >
-                    <Icon 
-                        name='photo-camera'
-                        size={40}
-                        color={Colors.white}
-                        onPress={onTakePicture}
-                        style={styles.buttonTakePicture}
-                    />
-                    <Icon 
-                        name='close'
-                        size={50}
-                        color={Colors.white}
-                        onPress={onDelete}
-                        style={styles.buttonDeletePicture}
-                    />
+
+                {/* // Aula: Adicionando Câmera no Aplicativo - Parte 3 - 01:10 - if de tela - condicao ternaria */}
+                {/* { photo ? () : () } */}
+                { photo ? (
+
+                    <ImageBackground
+                        style={styles.imagePreview}
+                        source={{uri: photo}}
+                    >
+
+                        <View style={styles.pictureButtonActions}>
+
+                            <Icon
+                                name="delete"
+                                size={50}
+                                color={ Colors.carbon }
+                                onPress={onDelete}
+                                style={styles.buttonClose}
+                            />
+
+                            <Icon
+                                name="check"
+                                size={50}
+                                color={ Colors.carbon }
+                                onPress={onDelete}
+                                style={styles.buttonClose}
+                            />
+
+                        </View>
+
+                    </ImageBackground>
                     
-                </RNCamera>
+                ) : (
+
+                    <RNCamera
+                        ref={ref => setCamera(ref)}
+                        // Aula: Adicionando Câmera no Aplicativo - Parte 1 - 16:52
+                        // style={{flex: 1, }}
+                        style={styles.camera}
+                        type={RNCamera.Constants.Type.back}
+                        autoFocus={RNCamera.Constants.AutoFocus.on}
+                        flashMode={RNCamera.Constants.FlashMode.on}
+                        captureAudio={false}                    
+                        androidCameraPermissionOptions={{
+                            title: 'Permissão para usar a câmera'
+                            , message: 'Precisamos da sua permissão'
+                            , buttonPositive: 'OK'
+                            , buttonNegative: 'Cancelar'
+                            ,
+                        }}
+                    >
+                        <Icon 
+                            name='photo-camera'
+                            size={40}
+                            color={Colors.white}
+                            onPress={onTakePicture}
+                            style={styles.buttonTakePicture}
+                        />
+                        <Icon 
+                            name='close'
+                            size={50}
+                            color={Colors.white}
+                            onPress={onDelete}
+                            style={styles.buttonDeletePicture}
+                        />
+                        
+                    </RNCamera>
+                ) }
 
             </Modal>
 
