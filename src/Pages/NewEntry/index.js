@@ -55,6 +55,8 @@ const NewEntry = ({navigation}) => {
         // , amount: '0.00'
         , amount: 0
         , entryAt: new Date()
+        // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 11:30
+        , photo: null
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 09:11 - category
         , category: {id: null, name: 'Selecione'}
         // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 07:11 - address
@@ -87,6 +89,9 @@ const NewEntry = ({navigation}) => {
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 15:26 - 
     const [entryAt, setEntryAt] = useState(entry.entryAt);
 
+    // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 11:35
+    const [photo, setPhoto] = useState(entry.photo);
+
     // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 06:51 - address
     const [address, setAddress] = useState(entry.address);
     
@@ -112,6 +117,8 @@ const NewEntry = ({navigation}) => {
             amount: parseFloat(amount)
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:10
             , category: category
+            // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 15:03 - photo
+            , photo: photo
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 20:09 - entryAt
             , entryAt: entryAt
             // Aula: Adicionando Geolocalização no Aplicativo - Parte 3 - 09:37 - 
@@ -185,7 +192,12 @@ const NewEntry = ({navigation}) => {
                     <NewEntryDatePicker value={entryAt} onChange={setEntryAt}/>
                     
                     {/* // Aula: Adicionando Câmera no Aplicativo - Parte 1 - 06:54 */}
-                    <NewEntryCameraPicker />
+                    {/* // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 11:57 */}
+                    <NewEntryCameraPicker 
+                        photo={photo}
+                        onChangePhoto={setPhoto}
+                        
+                    />
 
 
                     {/* // Aula: Adicionando Geolocalização no Aplicativo - Parte 1 - 08:24 */}

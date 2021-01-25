@@ -1,6 +1,5 @@
 // Aula: Adicionando Câmera no Aplicativo - Parte 1 - 04:45
-// Aula: Adicionando Câmera no Aplicativo - Parte 2 - 02:25 - Transferido para NewEntryCameraPickerModal/styles.js
-
+// Aula: Adicionando Câmera no Aplicativo - Parte 2 - 02:25 - Transferido de NewEntryCameraPicker/styles.js
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
@@ -37,11 +36,6 @@ const styles = StyleSheet.create({
         , position: 'absolute'
         , top: 20
         , right: 20
-        ,
-    }
-    // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 14:30
-    , buttonActived: {
-        backgroundColor: Colors.blue
         ,
     }
 });

@@ -106,6 +106,8 @@ export const saveEntry = async (value, entry = {}) => {
             , entryAt: value.entryAt || entry.entryAt
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 24:49
             , description: value.category.name 
+            // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 12:33
+            , photo: value.photo 
             , isInit: false
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:36
             , category: value.category || entry.category
