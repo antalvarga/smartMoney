@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {View, Image, Text} from 'react-native';
 
+// Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 24:34 - ActionFooter
+import ActionFooter, {ActionPrimaryButton} from '../../components/Core/ActionFooter';
+
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 08:33 - WelcomeMessage
 import WelcomeMessage from './WelcomeMessage';
 
@@ -24,6 +27,13 @@ const Welcome = ({navigation}) => {
     // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 12:06
     const [amount, setAmount] = useState(0);
 
+
+    // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 25:09
+    const onSavePress = () => {
+
+    };
+
+
     return (
         <View style={styles.container}>
 
@@ -38,7 +48,13 @@ const Welcome = ({navigation}) => {
             <WelcomeMessage />
 
             {/* // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 11:47 */}
-            <WelcomeBalanceInput amount={amount} onChangeValue={setAmount} />
+            {/* // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 17:18 */}
+            <WelcomeBalanceInput value={amount} onChangeValue={setAmount} />
+
+            {/* // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 25:05 - ActionFooter */}
+            <ActionFooter>
+                <ActionPrimaryButton title="Continuar" onPress={onSavePress} />
+            </ActionFooter>
 
         </View>
     );
