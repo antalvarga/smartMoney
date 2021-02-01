@@ -102,13 +102,20 @@ export const saveEntry = async (value, entry = {}) => {
             id: value.id || entry.id || teste
             // Aula: Editando dados de um lançamento - 11:08
             // , amount: amount
-            , amount: value.amount || entry.amount
-            , entryAt: value.entryAt || entry.entryAt
+            // Aula: Criando a tela de entrada de saldo inicial - Parte 2  > 06:38
+            , amount: value.amount || entry.amount || 0
+
+            // Aula: Criando a tela de entrada de saldo inicial - Parte 2  > 02:08
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Data - 24:49
+            , entryAt: value.entryAt || entry.entryAt || new Date()
             , description: value.category.name 
             // Aula: Adicionando Câmera no Aplicativo - Parte 2 - 12:33
             , photo: value.photo 
-            , isInit: false
+
+            // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 02:08
+            // , isInit: false
+            , isInit: value.isInit || false
+
             // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 14:36
             , category: value.category || entry.category
 
@@ -119,7 +126,7 @@ export const saveEntry = async (value, entry = {}) => {
             ,
         };
        
-            //console.log( ' saveEntry :: ', teste );
+            //console.log( ' saveEntry :: ', data );
             
             realm.create('Entry', data, true);
         });

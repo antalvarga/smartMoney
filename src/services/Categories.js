@@ -168,5 +168,7 @@ export const getInitCategories = async () => {
   
   return realm.objects('Category')
     .filtered('isInit = true')
-    .sorted('order');
+
+    // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 08:00
+    .sorted('order')['0'];
 };

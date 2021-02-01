@@ -10,6 +10,13 @@ import WelcomeMessage from './WelcomeMessage';
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 11:35 - 
 import WelcomeBalanceInput from './WelcomeBalanceInput';
 
+// Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 02:46 - 
+import useCategories from '../../hooks/useCategories';
+
+// Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 00:36
+import {saveEntry} from '../../services/Entries';
+
+
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 06:38 - logo
 import Logo from '../../assets/logo-white.png';
 
@@ -27,10 +34,23 @@ const Welcome = ({navigation}) => {
     // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 12:06
     const [amount, setAmount] = useState(0);
 
-
+    // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 03:38
+    const [ ,,, initCategories] = useCategories();
+    
     // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 25:09
+    // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 00:55
     const onSavePress = () => {
 
+        // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 00:56
+        saveEntry({
+            amount: amount
+            , isInit: true
+            , category: initCategories
+            , 
+        }); 
+        
+        // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 04:26
+        navigation.navigate('Main');
     };
 
 
