@@ -1,6 +1,6 @@
 // Criando o formulário de entrada de lançamentos - 03:57
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
+import {View, StatusBar, Text, TextInput, Button} from 'react-native';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 04:17 - import 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Botões de Ação - 08:01 - import 
@@ -38,6 +38,8 @@ import NewEntryDeleteAction from './NewEntryDeleteAction';
 
 // Aula: Hook useEntries - 06:23 
 import useEntries from '../../hooks/useEntries';
+
+import Colors from '../../styles/Colors';
 
 import styles from './styles';
 
@@ -152,6 +154,11 @@ const NewEntry = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+
+            {/* // Aula: Integrando com o sistemas de rota dinâmica - 22:53 */}
+            {/* <StatusBar barStyle="dark-content" backgroundColor={Colors.blue}/> */}
+            <StatusBar barStyle="dark-content" backgroundColor={Colors.blue} showHideTransition={'fade'}/>
+
             {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 00:41 */}
             {/* <BalanceLabel currentBalance={currentBalance}/> */}
             <BalanceLabel />

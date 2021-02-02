@@ -6,7 +6,7 @@ import React, {useState} from 'react';
 // import {View, Text, Picker, Button} from 'react-native';
 //import {Picker} from '@react-native-community/picker';
 // Aula: Ajustando a Tela de Relatório (Report) - Filtro de Data - Parte 2 - 03:42 - TouchableOpacity
-import {View, Text, TouchableOpacity ,Button, SafeAreaView} from 'react-native';
+import {View, StatusBar, Text, TouchableOpacity ,Button, SafeAreaView} from 'react-native';
 
 //import {Picker} from '@react-native-picker/picker';
 
@@ -115,6 +115,10 @@ const Report = ({navigation}) => {
 
     return(
         <View style={styles.container}>
+
+            {/* // Aula: Integrando com o sistemas de rota dinâmica - 22:53 */}
+            <StatusBar barStyle="light-content" backgroundColor={Colors.background}/>
+
             <Text>Report</Text>
 
             {/* // Adicionando as Props em Todos os Componentes - 01:57 */}

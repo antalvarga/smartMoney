@@ -14,6 +14,8 @@ target 'smartmoney' do
 
 
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'smartmoneyTests' do
     inherit! :complete
     # Pods for testing

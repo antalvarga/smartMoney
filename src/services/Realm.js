@@ -8,6 +8,10 @@ import EntrySchema from '../schemas/EntrySchema';
 //import {getAllCategories} from './Categories';
 import {getDefaultCategories} from './Categories';
 
+// Aula: Integrando com o sistemas de rota dinâmica - 22:09
+import {cleanInitialized} from './Welcome';
+
+
 
  
 export const getRealm = async () => {
@@ -25,6 +29,7 @@ export const getRealm = async () => {
 
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 2 - 01:26 - como apagar todo o Bd
     //dropDb(realm);
+    //cleanInitialized();
 
 
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, StatusBar, Image, Text} from 'react-native';
 
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 24:34 - ActionFooter
 import ActionFooter, {ActionPrimaryButton} from '../../components/Core/ActionFooter';
@@ -16,6 +16,8 @@ import useCategories from '../../hooks/useCategories';
 // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 00:36
 import {saveEntry} from '../../services/Entries';
 
+// Aula: Integrando com o sistemas de rota dinâmica - 18:24 
+import {setInitialized} from '../../services/Welcome'; 
 
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 06:38 - logo
 import Logo from '../../assets/logo-white.png';
@@ -23,7 +25,7 @@ import Logo from '../../assets/logo-white.png';
 // Aula: Criando a tela de entrada de saldo inicial - Parte 1 - 03:26
 import styles from './styles';
 
-
+import Colors from '../../styles/Colors';
 
 
 
@@ -49,13 +51,19 @@ const Welcome = ({navigation}) => {
             , 
         }); 
         
+        // Aula: Integrando com o sistemas de rota dinâmica - 18:42
+        setInitialized();
+        
         // Aula: Criando a tela de entrada de saldo inicial - Parte 2 - 04:26
         navigation.navigate('Main');
     };
 
 
     return (
+        
         <View style={styles.container}>
+            {/* // Aula: Integrando com o sistemas de rota dinâmica - 22:53 */}
+            <StatusBar barStyle="light-content" backgroundColor={Colors.background}/>
 
             <View style={styles.logo}>
 

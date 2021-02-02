@@ -18,6 +18,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 
 
+
 const Main = ({navigation}) => {
     
     // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:05 - 
