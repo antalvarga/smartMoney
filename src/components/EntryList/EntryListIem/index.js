@@ -11,6 +11,11 @@ import Svg, {Circle, Rect} from 'react-native-svg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 Icon.loadFont();
 
+// Aula: Formatacação de moedas e data - 09:25
+import Currency from '../../Core/Currency';
+
+// Aula: Formatacação de moedas e data - 10:40
+import moment from '../../../vendors/moment';
 
 // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 2 - 15:34
 import Colors from '../../../styles/Colors';
@@ -130,7 +135,12 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
                 <View style={styles.details}>
 
                     <Icon style={styles.entryAtIcon} name='access-time' size={20} />
-                    <Text style={styles.entryAtText}>{entry.entryAt.toString()}</Text>
+
+                    {/* // Aula: Formatacação de moedas e data - 11:00 */}
+                    {/* <Text style={styles.entryAtText}>{entry.entryAt.toString()}</Text> */}
+                    <Text style={styles.entryAtText}>
+                        {moment( entry.entryAt ).calendar()}
+                    </Text>
 
                     {/* Condição ternária */}
                     { entry.entryAt && (
@@ -139,10 +149,7 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
                             <Icon style={styles.addressIcon} name='person-pin' size={20} />
                         </>
                         
-                    )}
-
-                        
-                        
+                    )}    
 
                 </View>
                         
@@ -152,7 +159,11 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
             {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 05:49 */}
             <View style={styles.amount}>
             {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Valor - Parte 3 - 10:06 - {entry.amount} */}
-                <Text style={styles.amountText}>{entry.amount}</Text>
+                {/* // Aula: Formatacação de moedas e data - 09:37 */}
+                {/* <Text style={styles.amountText}>{entry.amount}</Text> */}
+                <Text style={styles.amountText}>
+                    <Currency value={entry.amount} />
+                </Text>
             </View>
 
 

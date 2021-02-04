@@ -3,9 +3,15 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import Svg, {Circle} from 'react-native-svg';
 
+
+// Aula: Formatacação de moedas e data - 08:19
+import Currency from '../../../Core/Currency';
+
 import Colors from '../../../../styles/Colors';
 
 import styles from './styles';
+
+
 
 
 
@@ -35,7 +41,11 @@ const EntrySummaryListItem = ({entry}) => {
             <Text style={styles.entry}>{entry.category.name}</Text>
 
             {/* <Text style={styles.value}>{entry.amount}</Text> */}
-            <Text style={styles.entryAmount}>R$ {entry.amount}</Text>
+            {/* // Aula: Formatacação de moedas e data - 08:10 */}
+            {/* <Text style={styles.entryAmount}>R$ {entry.amount}</Text> */}
+            <Text style={styles.entryAmount}>
+                <Currency value={entry.amount} />
+            </Text>
 
         </View>
     );
