@@ -53,7 +53,10 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
     // const bulletColor = Colors.blue;
     const bulletColor = entry.category.color || Colors.white;
 
-
+    /*
+        Comentario
+    */
+   const teste = Colors.white;
 
     return (
 
@@ -126,6 +129,7 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
 
 
 
+
             <View style={styles.description}>
 
                 {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 19:27 */}
@@ -143,6 +147,8 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
                     </Text>
 
                     {/* Condição ternária */}
+                    {/* // Aula: Formatacação de moedas e data - Correcao conforme 12:00 */}
+                    {/*                     
                     { entry.entryAt && (
                         <>                            
                             <Text style={styles.addressText} >{entry.address}</Text>
@@ -150,7 +156,19 @@ const EntryListItem = ({entry, isFirstItem, isLastItem, onEntryPress}) => {
                         </>
                         
                     )}    
+                    */}
 
+                    {entry.address && (
+                    <View style={styles.details}>
+                        <Icon style={styles.addressIcon} name="person-pin" size={12} />
+                        <Text style={styles.addressText}>
+                        {entry.address.length > 40
+                            ? entry.address.substring(0, 40 - 3) + '...'
+                            : entry.address}
+                        </Text>
+                    </View>
+                    )}
+                     
                 </View>
                         
             </View>
