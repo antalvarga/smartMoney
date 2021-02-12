@@ -8,7 +8,7 @@ import Colors from '../../styles/Colors';
 styles = StyleSheet.create({
     container: {
         flex: 1
-        , marginTop: 40
+        //, marginTop: 40
         , marginVertical: 0
         , backgroundColor: Colors.background
         , padding: 5

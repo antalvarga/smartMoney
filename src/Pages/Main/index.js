@@ -64,10 +64,11 @@ const Main = ({navigation}) => {
             {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 28:38 - passando funcao como propriedade */}
             {/* <BalancePanel currentBalance={currentBalance} /> */}
             {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 30:19 */}
+             
             <BalancePanel                 
                 onNewEntryPress={() => {navigation.navigate('NewEntry')}}
             />
-            
+             
             {/* // Aula: Ajustando a Tela de Relatório (Report) - Ajustes iniciais - 08:44 - ScrollView */}
             {/* <ScrollView horizontal = {false} > */}
 
@@ -81,10 +82,11 @@ const Main = ({navigation}) => {
                 {/* // Aula: Ajustando a Tela Principal (Main) - Resumo - Parte 2 - 00:31 */}
                 {/* <EntrySummary entriesGrouped={entriesGrouped} /> */}
                 {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 30:14 - onPressActionButton */}
+                 
                 <EntrySummary 
                     onPressActionButton={() => navigation.navigate( 'Report' )}
                 />
-
+ 
                 {/* // Adicionando as Props em Todos os Componentes - 05:26 */}
 
                 {/* // Aula: Editando dados de um lançamento - 01:35 - limpar os entries */}
@@ -95,6 +97,7 @@ const Main = ({navigation}) => {
                 {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 27:40 - onEntryPress */}
                 {/* quem está esperando o parametro entry é a pag NewEntry */}
                 {/* // Aula: Ajustando a Tela Principal (Main) - Listagem - Parte 3 - 29:34 - onPressActionButton */}
+ 
                 <EntryList 
                     onEntryPress={(entry) => navigation.navigate('NewEntry', {entry: entry})  }
                     onPressActionButton={() => navigation.navigate( 'Report' )}

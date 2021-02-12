@@ -7,7 +7,7 @@ import Colors from '../../styles/Colors';
 const styles = StyleSheet.create({
     container : {
         flex: 1
-        , marginTop: 50
+        //, marginTop: 50
         , padding: 1
         // , alignItems: "center"
         // , justifyContent: 'center'

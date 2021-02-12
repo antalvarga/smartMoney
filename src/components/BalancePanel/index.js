@@ -53,7 +53,7 @@ const BalancePanel = ({onNewEntryPress}) => {
         <View style={styles.container}>
 
             {/* // Aula: Integrando com o sistemas de rota dinâmica - 22:53 */}
-            <StatusBar barStyle="default" backgroundColor={Colors.blue}/>
+            <StatusBar barStyle="light-content" backgroundColor={Colors.background}/>
 
 
             <LinearGradient 

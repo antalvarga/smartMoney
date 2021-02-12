@@ -5,6 +5,8 @@ import Colors from '../../styles/Colors';
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 50
+        ,
         // Aula: Gráfico de evolução do saldo - Parte 2 - 00:25
         //marginBottom: -23
         // marginBottom: 3

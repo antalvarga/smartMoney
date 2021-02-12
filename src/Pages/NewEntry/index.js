@@ -45,12 +45,36 @@ import styles from './styles';
 
 
 
-
 const NewEntry = ({navigation}) => {
+
+// *** Aula: ATUALIZAÇÃO - REACT NAVIGATION V5: Alternativas ao getParam - 02:35 *** - 02:58 - route
+//const NewEntry = ({route, navigation}) => {
+
     // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 00:41
     // const currentBalance = 2065.35;
     
     // Aula: Editando dados de um lançamento - 05:58
+    /*
+    // *** Aula: ATUALIZAÇÃO - REACT NAVIGATION V5: Alternativas ao getParam - 02:35 ***
+    
+    
+    // Condição ternária 
+    const entry = route.params?.entry    
+        ? route.params.entry
+        : {
+            id: null
+            , amount: 0
+            , entryAt: new Date()
+            , photo: null
+            , address: null
+            , latitude: null
+            , longitude: null
+            , category: {id: null, name: 'Selecione'}
+        }
+    
+    
+    
+    */
     const entry = navigation.getParam('entry', {
         id: null
         // Aula: Ajustando a Tela de Entrada (NewEntry) - Categorias - Parte 4 - 17:31    
@@ -157,7 +181,7 @@ const NewEntry = ({navigation}) => {
 
             {/* // Aula: Integrando com o sistemas de rota dinâmica - 22:53 */}
             {/* <StatusBar barStyle="dark-content" backgroundColor={Colors.blue}/> */}
-            <StatusBar barStyle="dark-content" backgroundColor={Colors.blue} showHideTransition={'fade'}/>
+            <StatusBar barStyle="light-content" backgroundColor={Colors.background}/>
 
             {/* // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 00:41 */}
             {/* <BalanceLabel currentBalance={currentBalance}/> */}
