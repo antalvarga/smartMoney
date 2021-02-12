@@ -10,6 +10,7 @@ import useBalance from '../../hooks/useBalance';
 
 // Aula: Ajustando a Tela de Entrada (NewEntry) - Saldo - 02:02
 import Colors from '../../styles/Colors';
+import Currency from '../Core/Currency';
 import styles from './styles';
 
 
@@ -34,7 +35,11 @@ const BalanceLabel = () => {
             {/* <LinearGradient style={styles.panel} colors={[Colors.blueDark, Colors.blue]} > */}
                 {/* // Aula: Hook useBalance - 09:35 - trocar currentBalance por balance */}
                 {/* <Text style={styles.value}>{currentBalance}</Text> */}
-                <Text style={styles.value}>{balance}</Text>
+                {/* Corrigindo a formataçao do saldo */}
+                {/* <Text style={styles.value}>{balance} */}
+                <Text style={styles.value}>
+                    <Currency value={balance}/>
+                </Text>
             </LinearGradient>
 
         </View>
