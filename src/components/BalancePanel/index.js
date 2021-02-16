@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 15:41 - TouchableOpacity
 // import {View, Button } from 'react-native';
-import {View, TouchableOpacity, StatusBar } from 'react-native';
+import {View, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 1 - 04:40
 import LinearGradient from 'react-native-linear-gradient'; 
@@ -15,8 +15,12 @@ import BalancePanelChart from './BalancePanelChart';
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 17:47
 // import Icon from 'react-native-vector-icons/Feather';
 //import Icon from 'react-native-vector-icons/MaterialIcons';
+
+// import Icon2 from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+
+
+// import Icon from 'react-native-vector-icons/AntDesign';
 
 Icon.loadFont();
 
@@ -80,7 +84,9 @@ const BalancePanel = ({onNewEntryPress}) => {
                 {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 18:15 */}
                 {/* <Text>++</Text> */}                
                 {/* <Icon name="add" size={30} color="#900" /> */}                
-                <Icon name='add' size={40} color={Colors.white} />
+                <Icon name='add' size={30} color={Colors.white} /> 
+                {/* <Icon name='plus' size={40} color={Colors.white} />  */}
+                {/* <Text>+</Text> */}
             </TouchableOpacity>
 
         </View>

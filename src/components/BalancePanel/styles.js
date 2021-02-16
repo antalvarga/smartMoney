@@ -5,12 +5,28 @@ import Colors from '../../styles/Colors';
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 50
-        ,
+        //marginTop: 50
+        //,
         // Aula: Gráfico de evolução do saldo - Parte 2 - 00:25
         //marginBottom: -23
         // marginBottom: 3
         // , 
+        
+        marginTop: 30
+        //, backgroundColor: Colors.asphaltDark
+        , backgroundColor: Colors.blue
+        , margin: 5
+        , padding: 0
+        //, marginTop: -18
+        , marginBottom: 25
+        , borderRadius: 5
+        //, borderStyle: 'solid'
+        //, borderWidth: 1
+        // , borderColor: 'rgba(255, 255, 255, 0.2)'   // Colors.white
+        // Preferencia pessoal
+        //, borderColor: Colors.blueDark
+
+
 
     }
     , panel: {
@@ -23,7 +39,8 @@ const styles = StyleSheet.create({
     // Configuração do button *** TODO : Não ficou ok 
     , button: {
         // backgroundColor: Colors.green
-        backgroundColor: Colors.blue
+        //backgroundColor: Colors.blue
+        backgroundColor: Colors.blueDark
         , borderRadius: 30
         , alignSelf: 'flex-end'
         , alignItems: 'center'
