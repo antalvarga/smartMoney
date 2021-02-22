@@ -54,6 +54,29 @@ const styles = StyleSheet.create({
         , marginRight: 10
         ,
     }
+    , button3: {
+        alignSelf: "center",
+        backgroundColor: "white",
+        borderRadius: 4,
+        height: 150,
+        shadowColor: "black",
+        width: 150
+            ,
+    }
+    , button2: {
+        // shadowColor: '#000'
+        shadowColor: Colors.black
+        , shadowOpacity: 0.32
+        // , shadowOpacity: 0.6
+        , shadowRadius: 5.46
+        , elevation: 5 ///  9 
+        , shadowOffset: {
+            width: 10 // 0
+            , height: 4
+        }
+    }
+
+
 });
 
 export default styles;

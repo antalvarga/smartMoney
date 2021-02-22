@@ -13,16 +13,18 @@ import BalancePanelChart from './BalancePanelChart';
 
 
 // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 17:47
-// import Icon from 'react-native-vector-icons/Feather';
+//import Icon3 from 'react-native-vector-icons/Feather';
 //import Icon from 'react-native-vector-icons/MaterialIcons';
 
-// import Icon2 from 'react-native-vector-icons/FontAwesome';
+// import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 // import Icon from 'react-native-vector-icons/AntDesign';
 
 Icon.loadFont();
+Icon2.loadFont();
 
 /*
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -82,11 +84,19 @@ const BalancePanel = ({onNewEntryPress}) => {
                 onPress={onNewEntryPress}
             >
                 {/* // Aula: Ajustando a Tela Principal (Main) - Saldo - Parte 2 - 18:15 */}
-                {/* <Text>++</Text> */}                
+                {/* <Text>++</Text>
+                
+                */}                
                 {/* <Icon name="add" size={30} color="#900" /> */}                
                 <Icon name='add' size={30} color={Colors.white} /> 
                 {/* <Icon name='plus' size={40} color={Colors.white} />  */}
                 {/* <Text>+</Text> */}
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button2}>
+                {/* <Text>Teste</Text> */}
+                {/* <Icon2 name='plus' size={40} color={Colors.white}/> */}
+                <Icon2 name={'rocket'} size={40} color={Colors.white}/>
             </TouchableOpacity>
 
         </View>
