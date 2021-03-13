@@ -1,7 +1,5 @@
 package com.smartmoney;
 
-import com.oblador.vectoricons.VectorIconsPackage;
-
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -9,8 +7,7 @@ import com.facebook.react.ReactApplication;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import io.realm.react.RealmReactPackage;
 import io.realm.react.RealmReactPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
+//import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnative.createguid.CreateGuidPackage;
 import io.realm.react.RealmReactPackage;
 import io.realm.react.RealmReactPackage;
@@ -36,7 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add( new VectorIconsPackage() );
+          //packages.add( new VectorIconsPackage() );
           return packages;
         }
 
@@ -44,6 +41,15 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+
+
+
+        // @Override    
+        public boolean canOverrideExistingModule() {        
+          return true;    
+        }   
+        
+
       };
 
   @Override
